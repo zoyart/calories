@@ -75,13 +75,62 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
-p {
-  color: #41CD8C;
+.normal_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #0E0E11;
+  font-size: 14px;
+}
+
+.bold_text {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
+  color: black;
+  font-size: 15px;
+}
+
+.big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: black;
+  font-size: 18px;
 }
 
 .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
   background-color: #41CD8C;
-  height: 80px;
+  height: 60px;
+}
+.header .header__buttons_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 15%;
+  height: 60px;
+  margin-right: 20px;
+}
+.header .login_button_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #FFFFFF;
+  width: 90px;
+  height: 40px;
+  border-radius: 25px;
+  margin: auto;
+}
+.header .login_button {
+  color: #41CD8C;
+  text-align: center;
 }

@@ -5,6 +5,7 @@
 $green: #41CD8C;
 $white: #FFFFFF;
 $grey: #F4F3F0;
+$black: #0E0E11;
 $ff-roboto: 'Roboto', sans-serif;
 // Fonts
 // Roboto: Light 300
@@ -14,12 +15,53 @@ $ff-roboto: 'Roboto', sans-serif;
 
 ////////////////////////////////////////////////////////////
 
-p {
-    color: $green;
+// Text
+.normal_text {
+    font-family: $ff-roboto;
+    font-weight: 300;
+    color: $black;
+    font-size: 14px;
+}
+
+.bold_text {
     font-family: $ff-roboto;
     font-weight: 500;
+    color: black;
+    font-size: 15px;
 }
+
+.big_text {
+    font-family: $ff-roboto;
+    font-weight: 500;
+    color: black;
+    font-size: 18px;
+}
+
+///////////////////////////////////////
+
 .header {
+    display: flex;
+    justify-content: right;
     background-color: $green;
-    height: 80px;
+    height: 60px;
+    .header__buttons_container {
+        display: flex;
+        width: 15%;
+        height: 60px;
+        margin-right: 20px;
+    }
+    .login_button_wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $white;
+        width: 90px;
+        height: 40px;
+        border-radius: 25px;
+        margin: auto;
+    }
+    .login_button {
+        color: $green;
+        text-align: center;
+    }
 }
