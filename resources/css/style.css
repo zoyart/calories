@@ -97,14 +97,16 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .header {
+  background-color: #41CD8C;
+  height: 60px;
+}
+.header .part_3_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
-  background-color: #41CD8C;
-  height: 60px;
 }
 .header .header__buttons_container {
   display: -webkit-box;
@@ -124,13 +126,31 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  background-color: #FFFFFF;
+  background-color: #41CD8C;
+  border: 1px solid #FFFFFF;
   width: 90px;
   height: 40px;
   border-radius: 25px;
   margin: auto;
 }
-.header .login_button {
+.header .login_button_wrapper:hover {
+  background-color: #FFFFFF;
+}
+.header .login_button_wrapper:hover .login_button {
   color: #41CD8C;
+}
+.header .login_button {
+  color: #FFFFFF;
   text-align: center;
+}
+.header .logo_container {
+  margin-left: 20px;
+  position: absolute;
+  top: 0px;
+  height: 60px;
+  max-width: 15%;
+}
+.header .logo_container .logo {
+  width: 100%;
+  height: 100%;
 }
