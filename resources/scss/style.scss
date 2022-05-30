@@ -1,5 +1,21 @@
-$color: #41CD8C;
+// Imports
+@import "nullstyle.scss";
 
+// Colors
+$green: #41CD8C;
+$white: #FFFFFF;
+$grey: #F4F3F0;
+$ff-roboto: 'Roboto', sans-serif;
+// Fonts
+// Roboto: Light 300
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+// Roboto: Medium 500
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+////////////////////////////////////////////////////////////
 p {
-    color: $color;
+    color: $green;
+    font-family: $ff-roboto;
+    font-weight: 500;
 }
