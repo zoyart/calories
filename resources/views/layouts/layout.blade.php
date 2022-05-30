@@ -10,11 +10,10 @@
     </title>
 </head>
 
-<!-- просто копируется html код -->
-@include('layouts.header') 
+
+@include('layouts.header')
 
 <body>
-<!-- А это место куда можно подставить контент для страницы -->
     @yield('content')
 </body>
 
