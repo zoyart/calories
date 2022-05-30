@@ -8,6 +8,7 @@
     <title>
         @yield('head-title')
     </title>
+    <link rel="stylesheet" href="{{ asset('resources/css/style.css') }}">
 </head>
 
 
