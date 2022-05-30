@@ -80,3 +80,8 @@ p {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
+
+.header {
+  background-color: #41CD8C;
+  height: 80px;
+}
