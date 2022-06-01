@@ -15,3 +15,6 @@ Route::post('/register/store', [UserController::class, 'store'])->name('register
 // Login
 Route::get('/login', [UserController::class, 'loginForm'])->name('login.form');
 Route::post('/auth', [UserController::class, 'auth'])->name('auth');
+
+// Profile
+Route::resource('/profile', ProfileController::class);
