@@ -96,12 +96,6 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 18px;
 }
 
-.container {
-  max-width: 1136px;
-  margin: 0 auto;
-  text-align: center;
-}
-
 .header {
   background-color: #41CD8C;
   height: 60px;
@@ -148,6 +142,7 @@ h1, h2, h3, h4, h5, h6 {
 .header .login_button {
   color: #FFFFFF;
   text-align: center;
+  margin: auto;
 }
 .header .logo_container {
   margin-left: 20px;

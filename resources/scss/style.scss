@@ -37,13 +37,6 @@ $ff-roboto: 'Roboto', sans-serif;
     font-size: 18px;
 }
 
-///////////////////Container////////////////////
-.container {
-    max-width: 1136px;
-    margin: 0 auto;
-    text-align: center;
-}
-
 ////////////////////////////////////////
 .header {
     background-color: $green;
@@ -78,6 +71,7 @@ $ff-roboto: 'Roboto', sans-serif;
     .login_button {
         color: $white;
         text-align: center;
+        margin: auto;
     }
     .logo_container {
         margin-left: 20px;

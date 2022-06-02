@@ -6,12 +6,12 @@
     </div>
     <div class="part_3_container">
         <div class="header__buttons_container">
-            <button href="{{ route('login.form') }}" class="login_button_wrapper">
+            <a href="{{ route('login.form') }}" class="login_button_wrapper">
                 <p class="big_text login_button">Sign in</p>
-            </button>
-            <button href="{{ route('register.form') }}" class="login_button_wrapper">
+            </a>
+            <a href="{{ route('register.form') }}" class="login_button_wrapper">
                 <p class="big_text login_button">Sign up</p>
-            </button>
+            </a>
         </div>
     </div>
 </div>
