@@ -13,9 +13,9 @@ $ff-roboto: 'Roboto', sans-serif;
 // Roboto: Medium 500
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
 
-////////////////////////////////////////////////////////////
+///////////////////////Text/////////////////////////////////////
 
-// Text
+
 .normal_text {
     font-family: $ff-roboto;
     font-weight: 300;
@@ -37,8 +37,14 @@ $ff-roboto: 'Roboto', sans-serif;
     font-size: 18px;
 }
 
-///////////////////////////////////////
+///////////////////Container////////////////////
+.container {
+    max-width: 1136px;
+    margin: 0 auto;
+    text-align: center;
+}
 
+////////////////////////////////////////
 .header {
     background-color: $green;
     height: 60px;
