@@ -16,15 +16,23 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
             $table->char('gender');
+            $table->char('purpose');
+
+            $table->float('pace');
             $table->smallInteger('weight');
+            $table->smallInteger('purpose_weight');
             $table->smallInteger('growth');
             $table->smallInteger('age');
-            $table->string('email')->unique();
+
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+//            цель: сбросить поддержать или набрать
+//            темпы потери/набора веса
         });
     }
 
