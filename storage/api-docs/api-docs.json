@@ -6,26 +6,44 @@
     },
     "servers": [
         {
-            "url": "https://localhost/api/",
+            "url": "http://localhost/api/",
             "description": "Laravel Swagger API"
         }
     ],
     "paths": {
         "/target-date": {
-            "get": {
+            "post": {
                 "tags": [
                     "Registration"
                 ],
                 "summary": "Getting the target date",
-                "operationId": "12e6d70c5e9ee8b577735539f2cb26f0",
+                "operationId": "example",
+                "parameters": [
+                    {
+                        "name": "weight",
+                        "in": "query",
+                        "description": "Rate of weight loss/gain per week (0.1-0.7)",
+                        "required": false,
+                        "schema": {
+                            "type": "float"
+                        }
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "Successful operation"
-                    },
-                    "401": {
-                        "description": "Unauthorized user"
                     }
                 }
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "X-APP-ID": {
+                "type": "apiKey",
+                "name": "bearerAuth",
+                "in": "header",
+                "scheme": "bearer"
             }
         }
     },
