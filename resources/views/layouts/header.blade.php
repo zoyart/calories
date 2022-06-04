@@ -1,6 +1,6 @@
 <!-- Тут header сделаешь -->
 
-<div class="header">
+<!-- <div class="header">
     <div class="logo_container">
         <img src="{{ asset('\resources\img\logo.png') }}" alt="" class="logo">
     </div>
@@ -14,4 +14,4 @@
             </a>
         </div>
     </div>
-</div>
+</div> -->

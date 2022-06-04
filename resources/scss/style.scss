@@ -9,10 +9,22 @@ $black: #0E0E11;
 $ff-roboto: 'Roboto', sans-serif;
 // Fonts
 // Roboto: Light 300
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700,800&display=swap);
 // Roboto: Medium 500
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* FF 4-18 */
+input:focus::-moz-placeholder { color:transparent; } /* FF 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* IE 10+ */
 
+///////////////Active&Hidden///////////////////
+.active {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+
+///////////////////////////////////
 ///////////////////////Text/////////////////////////////////////
 
 
@@ -30,11 +42,44 @@ $ff-roboto: 'Roboto', sans-serif;
     font-size: 15px;
 }
 
-.big_text {
+.normal_text {
+    font-family: $ff-roboto;
+    font-weight: 300;
+    color: $black;
+    font-size: 14px;
+}
+
+.bold_text {
     font-family: $ff-roboto;
     font-weight: 500;
     color: black;
     font-size: 18px;
+}
+
+.big_text {
+    font-family: $ff-roboto;
+    font-weight: 700;
+    color: black;
+    font-size: 30px;
+}
+.very_big_text {
+    font-family: $ff-roboto;
+    font-weight: 800;
+    color: black;
+    font-size: 40px;
+}
+.link_text {
+    color: black;
+    &:hover {
+        color: #62E48B;
+    }
+}
+
+body {
+    display: flex;
+    background-image: linear-gradient(#A8F3A4, #62E48B);
+    background-repeat: no-repeat;
+    
 }
 
 ////////////////////////////////////////
@@ -84,4 +129,94 @@ $ff-roboto: 'Roboto', sans-serif;
             height: 100%;
         }
     }
+}
+//////////Content//////////////
+.container {
+    width: 860px;
+    height: 600px;
+    background-color: white;
+    margin: auto auto;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
+    .calories {
+        margin-top: 40px;
+    }
+    .form_container {
+        display: flex;
+        flex-direction:column;
+        margin: 75px auto 0 auto;
+        min-width: 290px;
+        form {
+            margin: 0 auto;
+        }
+        
+        .forgot_text {
+            margin-top: 17px;
+        }
+
+        .form__text {
+            margin-bottom: 40px;
+            color:rgb(54, 54, 54);
+        }
+        .log_wrapper {
+            &:not(:first-child) {
+                margin-top: 12px;
+            }
+            &:last-child {
+                margin-top: 17px;
+            }
+            display: flex;
+            width: 290px;
+            height: 50px;
+            background-color: #E6E6E6;
+            border-radius: 35px; 
+            box-shadow: 2px 2px 2px 1px rgba(94, 94, 94, 0.2);
+            input {
+                width: 180px;   
+                height: 40px;
+                margin: auto;
+                background-color: transparent;
+            }
+            .log__input {
+                text-align: left;
+            }
+        }
+        .submit_wrapper {
+            margin-top: 20px;
+            background-image: linear-gradient(to right, #5DCF69, #62E48B);
+            input {
+                width: 180px;
+                height: 40px;
+                margin: auto;
+                background-color: transparent;
+            }
+            .submit_text {
+                margin: auto;
+                color:white;
+                font-size: 23px;
+            }
+        }
+    }
+    .genders {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        .gender_button {
+        width: 120px;
+        height: 120px;
+        border-radius:100px;
+        }
+        .gender_wrapper {
+            border: 2px solid transparent;
+        }
+        .gender_img {
+        width: 100%;
+        height: 100%;
+        border-radius:100px;
+        }
+    
+    }
+    
+    
 }

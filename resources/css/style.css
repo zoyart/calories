@@ -1,7 +1,6 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,500,700,800&display=swap);
 * {
   padding: 0;
   margin: 0;
@@ -75,6 +74,33 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+input:focus:-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 4-18 */
+input:focus::-moz-placeholder {
+  color: transparent;
+}
+
+/* FF 19+ */
+input:focus:-ms-input-placeholder {
+  color: transparent;
+}
+
+/* IE 10+ */
+.active {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
 .normal_text {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -89,11 +115,48 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 15px;
 }
 
-.big_text {
+.normal_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #0E0E11;
+  font-size: 14px;
+}
+
+.bold_text {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   color: black;
   font-size: 18px;
+}
+
+.big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  color: black;
+  font-size: 30px;
+}
+
+.very_big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 800;
+  color: black;
+  font-size: 40px;
+}
+
+.link_text {
+  color: black;
+}
+.link_text:hover {
+  color: #62E48B;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#A8F3A4), to(#62E48B));
+  background-image: linear-gradient(#A8F3A4, #62E48B);
+  background-repeat: no-repeat;
 }
 
 .header {
@@ -154,4 +217,103 @@ h1, h2, h3, h4, h5, h6 {
 .header .logo_container .logo {
   width: 100%;
   height: 100%;
+}
+
+.container {
+  width: 860px;
+  height: 600px;
+  background-color: white;
+  margin: auto auto;
+  border-radius: 20px;
+  text-align: center;
+  -webkit-box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
+          box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
+}
+.container .calories {
+  margin-top: 40px;
+}
+.container .form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 75px auto 0 auto;
+  min-width: 290px;
+}
+.container .form_container form {
+  margin: 0 auto;
+}
+.container .form_container .forgot_text {
+  margin-top: 17px;
+}
+.container .form_container .form__text {
+  margin-bottom: 40px;
+  color: rgb(54, 54, 54);
+}
+.container .form_container .log_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 290px;
+  height: 50px;
+  background-color: #E6E6E6;
+  border-radius: 35px;
+  -webkit-box-shadow: 2px 2px 2px 1px rgba(94, 94, 94, 0.2);
+          box-shadow: 2px 2px 2px 1px rgba(94, 94, 94, 0.2);
+}
+.container .form_container .log_wrapper:not(:first-child) {
+  margin-top: 12px;
+}
+.container .form_container .log_wrapper:last-child {
+  margin-top: 17px;
+}
+.container .form_container .log_wrapper input {
+  width: 180px;
+  height: 40px;
+  margin: auto;
+  background-color: transparent;
+}
+.container .form_container .log_wrapper .log__input {
+  text-align: left;
+}
+.container .form_container .submit_wrapper {
+  margin-top: 20px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#5DCF69), to(#62E48B));
+  background-image: linear-gradient(to right, #5DCF69, #62E48B);
+}
+.container .form_container .submit_wrapper input {
+  width: 180px;
+  height: 40px;
+  margin: auto;
+  background-color: transparent;
+}
+.container .form_container .submit_wrapper .submit_text {
+  margin: auto;
+  color: white;
+  font-size: 23px;
+}
+.container .genders {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 40px;
+}
+.container .genders .gender_button {
+  width: 120px;
+  height: 120px;
+  border-radius: 100px;
+}
+.container .genders .gender_wrapper {
+  border: 2px solid transparent;
+}
+.container .genders .gender_img {
+  width: 100%;
+  height: 100%;
+  border-radius: 100px;
 }
