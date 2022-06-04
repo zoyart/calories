@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreRegistrationRequest;
 use Illuminate\Http\Request;
 use phpDocumentor\Reflection\Types\Float_;
 
