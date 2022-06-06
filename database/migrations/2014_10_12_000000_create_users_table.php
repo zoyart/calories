@@ -20,12 +20,14 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->char('gender');
             $table->char('purpose');
+            $table->char('workout');
 
             $table->float('pace');
             $table->smallInteger('weight');
             $table->smallInteger('purpose_weight');
             $table->smallInteger('growth');
             $table->smallInteger('age');
+            $table->smallInteger('calories_per_day');
 
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
