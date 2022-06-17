@@ -111,21 +111,7 @@ input:focus:-ms-input-placeholder {
 .bold_text {
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  color: black;
-  font-size: 15px;
-}
-
-.normal_text {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
   color: #0E0E11;
-  font-size: 14px;
-}
-
-.bold_text {
-  font-family: "Roboto", sans-serif;
-  font-weight: 500;
-  color: black;
   font-size: 18px;
 }
 
@@ -278,9 +264,10 @@ body {
 }
 .container .form_container .log_wrapper .log__input {
   text-align: left;
+  color: #888888;
 }
 .container .form_container .submit_wrapper {
-  margin-top: 20px;
+  margin: 20px auto 0 auto;
   background-image: -webkit-gradient(linear, left top, right top, from(#5DCF69), to(#62E48B));
   background-image: linear-gradient(to right, #5DCF69, #62E48B);
 }
@@ -316,4 +303,49 @@ body {
   width: 100%;
   height: 100%;
   border-radius: 100px;
+}
+.container .genders .gender_wrapper {
+  border: 4px solid transparent;
+  border-radius: 65px;
+}
+
+.activities {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 415px;
+  gap: 12.5px;
+}
+.activities .activities__div {
+  margin: 0 auto;
+  width: 100%;
+}
+.activities .activities__div .activities__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-radius: 10px;
+  min-height: 50px;
+}
+.activities .activities__div .activities__img {
+  margin: auto;
+  width: 40px;
+  height: 40px;
+}
+.activities .activities__div .activities__text {
+  color: rgb(110, 110, 110);
+  max-width: 85%;
+  margin: auto;
+}
+
+#activities .form_container {
+  margin: 30px auto;
 }

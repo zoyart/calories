@@ -16,10 +16,9 @@ btn[0].addEventListener("click", ()=> {
     if(btn[0].parentNode.className == "man gender_wrapper" && man_active != true) {
         man_active = true;
         woman_active = false;
-        woman.style.border = "2px solid transparent"; 
-        man.style.border = "2px solid #F4F3F0";
+        woman.style.border = "4px solid transparent"; 
+        man.style.border = "4px solid #62E48B";
         value_input.value = "male";
-        console.log(value_input.value);
     }
     
     
@@ -29,10 +28,9 @@ btn[1].addEventListener("click", ()=> {
     if(btn[1].parentNode.className == "woman gender_wrapper" && woman_active != true) {
         woman_active = true;
         man_active = false;
-        man.style.border = "2px solid transparent";
-        woman.style.border = "2px solid #F4F3F0";
+        man.style.border = "4px solid transparent";
+        woman.style.border = "4px solid #62E48B";
         value_input.value = "female";
-        console.log(value_input.value);
     }
     
 });
