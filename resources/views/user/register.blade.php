@@ -67,7 +67,7 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div>
-    <div class="container active">
+    <div class="container hidden">
         <h1 class="very_big_text calories">Calories</h1>
         <div class="form_container">
             <h2 class="big_text form__text">Choose your gender:</h2>
@@ -91,7 +91,7 @@
             </form>
         </div>
     </div>
-    <div id="activities" class="container hidden">
+    <div id="activities" class="container active">
         <h1 class="very_big_text calories">Calories</h1>
         <div class="form_container">
             <h2 class="big_text form__text">Select the level of daily activity</h2>
@@ -128,7 +128,7 @@
                         </button>
                     </div>
                 </div>
-                <input id="value_input" value="none" type="text" class="hidden">
+                <input id="activities-value_input" value="none" type="text" class="hidden">
                 <button type="submit" class="log_wrapper submit_wrapper">
                     <p class="bold_text submit_text">CONTINUE</p>
                 </button>
