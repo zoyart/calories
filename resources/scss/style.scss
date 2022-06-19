@@ -44,6 +44,17 @@ input:focus:-ms-input-placeholder {
 }
 // Buttons
 .activities__div {
+    -webkit-transition: 200ms ease-out;  
+    -moz-transition: 200ms ease-out;  
+    -o-transition: 200ms ease-out;  
+    transition: 200ms ease-out;  
+    border: 4px solid transparent;
+}
+.gender_button {
+    -webkit-transition: 200ms ease-out;  
+    -moz-transition: 200ms ease-out;  
+    -o-transition: 200ms ease-out;  
+    transition: 200ms ease-out;  
     border: 4px solid transparent;
 }
 .active_btn {
@@ -295,6 +306,10 @@ body {
             width: 100%;
             border-radius: 10px;
             min-height: 50px;
+            -webkit-transition: 500ms ease-out;  
+            -moz-transition: 500ms ease-out;  
+            -o-transition: 500ms ease-out;  
+            transition: 500ms ease-out;  
         }
 
         .activities__img {
