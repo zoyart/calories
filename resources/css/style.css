@@ -157,12 +157,11 @@ input:focus:-ms-input-placeholder {
 }
 
 body {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   background-image: -webkit-gradient(linear, left top, left bottom, from(#A8F3A4), to(#62E48B));
   background-image: linear-gradient(#A8F3A4, #62E48B);
   background-repeat: no-repeat;
+  max-width: 100%;
+  overflow: hidden;
 }
 
 .header {
@@ -225,18 +224,26 @@ body {
   height: 100%;
 }
 
+#main-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
 .container {
-  width: 860px;
-  height: 600px;
+  width: 75%;
+  height: 95%;
   background-color: white;
-  margin: auto auto;
+  margin: auto;
   border-radius: 20px;
   text-align: center;
   -webkit-box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
           box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
 }
 .container .calories {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 .container .form_container {
   display: -webkit-box;
@@ -249,7 +256,7 @@ body {
   margin: 75px auto 0 auto;
   min-width: 290px;
 }
-.container .form_container form {
+.container .form_container .form {
   margin: 0 auto;
 }
 .container .form_container .forgot_text {
