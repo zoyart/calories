@@ -1,8 +1,8 @@
 <?php
 
+use App\Http\Controllers\User\ProfileController;
+use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\ProfileController;
 
 
 // General page
@@ -17,4 +17,7 @@ Route::get('/login', [UserController::class, 'loginForm'])->name('login.form');
 Route::post('/auth', [UserController::class, 'auth'])->name('auth');
 
 // Profile
-Route::resource('/profile', ProfileController::class);
+Route::get('/profile/{profileId}', [ProfileController::class, 'show'])->name('profile.show');
+Route::get('/profile/{profileId}/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+Route::put('/profile/{profileId}', [ProfileController::class, 'update'])->name('profile.update');
+Route::delete('/profile/{profileId}', [ProfileController::class, 'destroy'])->name('profile.destroy');

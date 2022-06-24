@@ -1,11 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\User;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreRegistrationRequest;
 use App\Models\User;
+use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use function view;
 
 class UserController extends Controller
 {
@@ -26,7 +29,7 @@ class UserController extends Controller
         $workout = $request->input('workout');
         $paceInKilograms = (float) $request->input('pace');
 
-        $paceInKilocalories = (float) $paceInKilograms * 7700;
+        $paceInKilocalories = $paceInKilograms * 7700;
 
         switch ($gender) {
             case 'male':
@@ -58,8 +61,10 @@ class UserController extends Controller
 //        return redirect()->route();
     }
 
-    public function auth() {
-
+    public function auth(Request $request) {
+        $validation = $request->validate([
+            ''
+        ]);
     }
 
     public function logout() {

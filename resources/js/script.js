@@ -1,4 +1,4 @@
-// Activities 
+// Activities
 const activitiesBtns = document.querySelectorAll(".activities__div");
 const activitiesValue = document.getElementById("activities-value_input");
 
@@ -19,7 +19,7 @@ function buttonsFun(buttons_list, active_class, passive_class) {
             }
         })
     }
-    
+
 }
 
 buttonsFun(activitiesBtns, "active_btn", "passive_btn");
@@ -29,9 +29,9 @@ buttonsFun(genderBtns, "active_btn", "passive_btn");
 const submitBtns = document.querySelectorAll(".submit_wrapper");
 const pages = document.querySelectorAll(".container");
 
-function submitBtnsFun(sendButtons, pages) { 
+function submitBtnsFun(sendButtons, pages) {
     for(let i=0;i<sendButtons.length;i++) {
-        sendButtons[i].addEventListener('click', () => { 
+        sendButtons[i].addEventListener('click', () => {
             pages[i+1].classList.remove("hidden")
             pages[i+1].classList.add("active")
             for(let p=0; p<pages.length; p++) {
@@ -44,3 +44,24 @@ function submitBtnsFun(sendButtons, pages) {
     }
 }
 submitBtnsFun(submitBtns, pages);
+
+
+
+// Logic
+$('#bs-1').click(function () {
+    $(".stage-1").hide();
+    $(".stage-2").show();
+});
+$('#bs-2').click(function () {
+    $(".stage-2").hide();
+    $(".stage-3").show();
+});
+
+$('#back-2').click(function () {
+    $(".stage-2").hide();
+    $(".stage-1").show();
+});
+$('#back-3').click(function () {
+    $(".stage-3").hide();
+    $(".stage-2").show();
+});
