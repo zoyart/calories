@@ -45,23 +45,3 @@ function submitBtnsFun(sendButtons, pages) {
 }
 submitBtnsFun(submitBtns, pages);
 
-
-
-// Logic
-$('#bs-1').click(function () {
-    $(".stage-1").hide();
-    $(".stage-2").show();
-});
-$('#bs-2').click(function () {
-    $(".stage-2").hide();
-    $(".stage-3").show();
-});
-
-$('#back-2').click(function () {
-    $(".stage-2").hide();
-    $(".stage-1").show();
-});
-$('#back-3').click(function () {
-    $(".stage-3").hide();
-    $(".stage-2").show();
-});
