@@ -8,7 +8,6 @@ use App\Models\User;
 use http\Env\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use function view;
 
 class UserController extends Controller
 {
@@ -58,7 +57,7 @@ class UserController extends Controller
 
         Auth::login($user);
 
-//        return redirect()->route();
+        return redirect()->route('calories.calories');
     }
 
     public function auth(Request $request) {
@@ -70,6 +69,6 @@ class UserController extends Controller
     public function logout() {
         Auth::logout();
 
-//        return redirect()->route();
+        return redirect()->route('index');
     }
 }

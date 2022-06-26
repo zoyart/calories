@@ -3,19 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreRegistrationRequest;
 use Illuminate\Http\Request;
-use phpDocumentor\Reflection\Types\Float_;
 
 class RegistrationController extends Controller
 {
     public function targetDate(Request $request) {
         $request->validate([
-            'weight' => 'required',
-            'purpose_weight' => 'required',
-            'purpose' => 'required',
+            'weight' => 'required|max:512|numeric',
+            'purpose_weight' => 'required|max:512|numeric',
+            'purpose' => 'required|max:512',
         ]);
 
+//      Надо бы проверить какое будет число, int или float
         $weight = (float) $request->weight;
         $purpose_weight = (float) $request->purpose_weight;
 
