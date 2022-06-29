@@ -46,7 +46,13 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div> -->
-        <form id="main-form" action="">
+    <div>
+        ВАкансия 1
+    </div>
+    <div>
+        ВАкансия 2
+    </div>
+    <form id="main-form" action="">
             <div class="container active">
                 <h1 class="very_big_text calories">Calories</h1>
                 <div class="form_container">
