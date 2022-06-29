@@ -7,6 +7,7 @@ $white: #FFFFFF;
 $grey: #F4F3F0;
 $darkGrey: #888888;
 $black: #0E0E11;
+$gradient: linear-gradient(#9ae096, #62E48B);
 $ff-roboto: 'Roboto',
 sans-serif;
 // Fonts
@@ -42,57 +43,54 @@ input:focus:-ms-input-placeholder {
 .hidden {
     display: none;
 }
+
 // Buttons
 .activities__div {
-    -webkit-transition: 200ms ease-out;  
-    -moz-transition: 200ms ease-out;  
-    -o-transition: 200ms ease-out;  
-    transition: 200ms ease-out;  
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
     border: 4px solid transparent;
 }
+
 .gender_button {
-    -webkit-transition: 200ms ease-out;  
-    -moz-transition: 200ms ease-out;  
-    -o-transition: 200ms ease-out;  
-    transition: 200ms ease-out;  
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
     border: 4px solid transparent;
 }
+
 .active_btn {
     border: 4px solid #62E48B;
-} 
+}
+
 .passive_btn {
     border: none;
 }
-///////////////////////Text/////////////////////////////////////
 
+///////////////////////Text/////////////////////////////////////
 
 
 .normal_text {
     font-family: $ff-roboto;
     font-weight: 300;
     color: $black;
-    font-size: 14px;
+    font-size: 20px;
 }
 
 .bold_text {
     font-family: $ff-roboto;
-    font-weight: 500;
+    font-weight: 600;
     color: $black;
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .big_text {
     font-family: $ff-roboto;
     font-weight: 700;
     color: black;
-    font-size: 30px;
-}
-
-.very_big_text {
-    font-family: $ff-roboto;
-    font-weight: 800;
-    color: black;
-    font-size: 40px;
+    font-size: 36px;
 }
 
 .link_text {
@@ -104,48 +102,77 @@ input:focus:-ms-input-placeholder {
 }
 
 body {
-    background-image: linear-gradient(#A8F3A4, #62E48B);    
+    // background-image: linear-gradient(#A8F3A4, #62E48B);
+    background-color: #EEEEEE;
     background-repeat: no-repeat;
     max-width: 100%;
     overflow: hidden;
 }
 
-////////////////////////////////////////
+/////////////////header///////////////////////
 .header {
-    background-color: $green;
-    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    background-color: $white;
+    height: 90px;
 
-    .part_3_container {
+    .header__logo_container {
+        max-width: 15%;
         display: flex;
-        justify-content: right;
+        .header__logo {
+            margin: auto;
+            height: 100%;
+        }
     }
 
-    .header__buttons_container {
+    .header__nav_container {
         display: flex;
-        width: 15%;
-        height: 60px;
-        margin-right: 20px;
+        max-width: 70%;
     }
 
-    .login_button_wrapper {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background-color: $green;
-        border: 1px solid $white;
-        width: 90px;
-        height: 40px;
-        border-radius: 25px;
+    .header__text_wrapper {
         margin: auto;
+        display: flex;
+        column-gap: 60px;
+
+    }
+
+    .header__text {
+        transition: color .2s ease-out;
 
         &:hover {
-            background-color: $white;
+            color: $green;
+        }
+    }
+
+    .header__login_container {
+        display: flex;
+        min-width: 15%;
+
+        .login_button_wrapper {
+            display: flex;
+            background: $green;
+            height: 40px;
+            width: 90px;
+            border-radius: 25px;
+            margin: auto;
 
             .login_button {
-                color: $green;
+                text-align: center;
+            }
+
+            transition: background .2s ease-out;
+
+            &:hover {
+                background: $white;
+
+                .login_button {
+                    color: $green;
+                }
             }
         }
     }
+
 
     .login_button {
         color: $white;
@@ -167,12 +194,75 @@ body {
     }
 }
 
+///////////////////Footer//////////////////////////
+footer {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    background: $white;
+    width: 100%;
+    height: 320px;
+    bottom: 0;
+    left: 0;
+    padding: 46px 300px;
+
+    .footer__image {
+        background: $grey;
+    }
+
+    .footer__social_container {
+        text-align: left;
+        max-width: 42.5%;
+        .rights_text {
+            margin-top: 110px;
+        }
+        .footer__social_container {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+            .footer__social_wrapper {
+                border-radius: 50px;
+                max-width: 62px;
+                max-height: 62px;
+                background: $grey;
+            }
+        }
+    }
+
+    .footer__links_container {
+        max-width: 15%;
+        text-align: center;
+
+        .footer__text_wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            .footer__text {
+                color: $green;
+            }
+        }
+    }
+
+    .footer__image_container {
+        max-width: 42.5%;
+        margin: auto 0;
+
+        .footer__image {
+            width: 228px;
+            max-height: 228px;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
 //////////Content//////////////
 #main-form {
     display: flex;
     width: 100%;
     height: 100%;
 }
+
 .container {
     width: 75%;
     height: 95%;
@@ -181,9 +271,11 @@ body {
     border-radius: 20px;
     text-align: center;
     box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);
+
     .calories {
         padding-top: 40px;
     }
+
     .form_container {
         display: flex;
         flex-direction: column;
@@ -234,19 +326,21 @@ body {
 
         .submit_wrapper {
             margin: 20px auto 0 auto;
-            background: -webkit-linear-gradient(#62E48B,#4fb359);  
-            background: -moz-linear-gradient(#62E48B,#4fb359);  
-            background: -o-linear-gradient(#62E48B,#4fb359);  
-            background: linear-gradient(#62E48B,#4fb359);  
-        
-            -webkit-transition: background 500ms ease-out;  
-            -moz-transition: background 500ms ease-out;  
-            -o-transition: background 500ms ease-out;  
-            transition: background 500ms ease-out;  
-            background-size:1px 200px;  
-            &:hover {   
-                background-position:300px;  
+            background: -webkit-linear-gradient(#62E48B, #4fb359);
+            background: -moz-linear-gradient(#62E48B, #4fb359);
+            background: -o-linear-gradient(#62E48B, #4fb359);
+            background: linear-gradient(#62E48B, #4fb359);
+
+            -webkit-transition: background 500ms ease-out;
+            -moz-transition: background 500ms ease-out;
+            -o-transition: background 500ms ease-out;
+            transition: background 500ms ease-out;
+            background-size: 1px 200px;
+
+            &:hover {
+                background-position: 300px;
             }
+
             input {
                 width: 180px;
                 height: 40px;
@@ -303,16 +397,17 @@ body {
         margin: 0 auto;
         width: 100%;
         border-radius: 15px;
+
         .activities__btn {
             display: flex;
             justify-content: space-between;
             width: 100%;
             border-radius: 10px;
             min-height: 50px;
-            -webkit-transition: 500ms ease-out;  
-            -moz-transition: 500ms ease-out;  
-            -o-transition: 500ms ease-out;  
-            transition: 500ms ease-out;  
+            -webkit-transition: 500ms ease-out;
+            -moz-transition: 500ms ease-out;
+            -o-transition: 500ms ease-out;
+            transition: 500ms ease-out;
         }
 
         .activities__img {
