@@ -9,6 +9,17 @@
             <a href="#" class="normal_text header__text">Progress</a>
         </div>    
     </nav>
+    <div class="hamburger-menu">
+        <input id="menu__toggle" type="checkbox" />
+        <label class="menu__btn" for="menu__toggle">
+            <span></span>
+        </label>  
+        <ul class="menu__box">
+            <a href="#" class="big_text header__text menu__item">Calories</a>
+            <a href="#" class="big_text header__text menu__item">Recipes</a>
+            <a href="#" class="big_text header__text menu__item">Progress</a>
+        </ul>
+    </div>
     <div class="header__login_container">
         <a href="{{ route('login.form') }}" class="login_button_wrapper">
             <p class="bold_text login_button">Sign in</p>
