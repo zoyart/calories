@@ -1,5 +1,6 @@
 // Imports
 @import "nullstyle.scss";
+@import "./pages/calories.scss";
 
 // Colors
 $green: #41CD8C;
@@ -160,6 +161,10 @@ body {
 
     .header__nav_container {
         display: flex;
+        .nav__wrapper {
+            margin: auto;
+        }
+        
     }
 
     .header__text_wrapper {
@@ -249,7 +254,7 @@ body {
   }
   
   .menu__btn {
-    display: flex;
+    display: none;
     align-items: center;
     position: fixed;
     top: 17px;
@@ -329,15 +334,18 @@ body {
     }
 }
 @media (max-width: 575.98px) {
-    .header__nav_container {
+    .nav__wrapper {
         display: none;
         * {
             display: none;
         }
     }
-    .login_button_wrapper {
+    .menu__btn {
+        display: flex;
+    }
+    .header__login_container {
         position: absolute;
-        right: 60px;
+        right: 30px;
         top: 15px;
     }
 }
@@ -351,6 +359,7 @@ footer {
     height: 320px;
     bottom: 0;
     left: 0;
+    padding: 0 10px;
     .footer__container {
         display: flex;
         justify-content: space-between;
