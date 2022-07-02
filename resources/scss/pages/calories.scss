@@ -1,0 +1,44 @@
+@import "../variables.scss";
+// Calories
+.calories_page {
+    margin: 70px auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+// Menu block
+.calories__menu_block {
+    display:flex;	
+    flex-direction:row;
+    justify-content: center;
+    margin-top: 108px;
+}
+.calories__calories_left {
+    border: 1px solid $green;
+    border-radius: 150px;
+    min-width: 220px;
+    min-height: 220px;
+    margin: -70px 123px 0 123px;
+    .calorius_wrapper {
+        margin-top: 70px;
+    }
+}
+.calories__consumption {
+    &:first-child {
+        margin-left: 34px;
+    }
+    &:last-child {
+        margin-right: 34px;
+    }
+}
+// Protein block
+.calories__protein_block {
+    margin: 79px auto;
+    display: flex;
+    flex-direction: row;
+    gap: 98px;
+}
+.protein__srtip {
+    width: 81px;
+}

@@ -1,6 +1,6 @@
 <!-- Тут footer сделаешь -->
 <footer>
-    <div class="footer__container">
+    <div class="footer__container __container">
         <div class="footer__social_container">
             <p class="normal_text">Social networks</p>
             <div class="social_container">

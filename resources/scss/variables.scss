@@ -1,0 +1,122 @@
+// Colors
+$green: #41CD8C;
+$white: #FFFFFF;
+$grey: #F4F3F0;
+$darkGrey: #888888;
+$black: #0E0E11;
+$gradient: linear-gradient(#9ae096, #62E48B);
+$ff-roboto: 'Roboto',
+sans-serif;
+// Fonts
+// Roboto: Light 300
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,800&display=swap);
+
+// Roboto: Medium 500
+input:focus::-webkit-input-placeholder {
+    color: transparent;
+}
+
+input:focus:-moz-placeholder {
+    color: transparent;
+}
+
+/* FF 4-18 */
+input:focus::-moz-placeholder {
+    color: transparent;
+}
+
+/* FF 19+ */
+input:focus:-ms-input-placeholder {
+    color: transparent;
+}
+
+/* IE 10+ */
+
+///////////////Active&Hidden///////////////////
+.active {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+// Buttons
+.activities__div {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    border: 4px solid transparent;
+}
+
+.gender_button {
+    -webkit-transition: 200ms ease-out;
+    -moz-transition: 200ms ease-out;
+    -o-transition: 200ms ease-out;
+    transition: 200ms ease-out;
+    border: 4px solid transparent;
+}
+
+.active_btn {
+    border: 4px solid $green;
+}
+
+.passive_btn {
+    border: none;
+}
+
+///////////////////////Text/////////////////////////////////////
+
+
+.normal_text {
+    font-family: $ff-roboto;
+    font-weight: 300;
+    color: $black;
+    font-size: 20px;
+}
+
+.bold_text {
+    font-family: $ff-roboto;
+    font-weight: 600;
+    color: $black;
+    font-size: 20px;
+}
+
+.big_text {
+    font-family: $ff-roboto;
+    font-weight: regular;
+    color: black;
+    font-size: 36px;
+}
+
+.link_text {
+    color: black;
+
+    &:hover {
+        color: $green;
+    }
+}
+
+@media (max-width: 575.98px) {}
+
+@media (max-width: 767.98px) {}
+
+@media (max-width: 991.98px) {}
+
+@media (max-width: 1199.98px) {}
+
+@media (max-width: 1399.98px) {
+    .normal_text {
+        font-size: 16px;
+    }
+
+    .bold_text {
+        font-size: 16px;
+    }
+
+    .big_text {
+        font-size: 30px;
+    }
+
+}
