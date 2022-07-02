@@ -18,9 +18,12 @@ Route::group(['middleware' => 'guest'], function () {
     // Login
     Route::get('/login', [UserController::class, 'loginForm'])->name('login.form');
     Route::post('/auth', [UserController::class, 'auth'])->name('auth');
+
 });
 
 Route::group(['middleware' => 'auth'], function () {
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+
     // Profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
     Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
