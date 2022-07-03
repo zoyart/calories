@@ -41,4 +41,111 @@
             <p class="normal_text">0 / 250</p>
         </div>
     </div>
+    <div class="calories__eating_time_block">
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Завтрак</p>
+                    <p class="normal_text">Овсянка, яблоко, пиво</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+            
+            <div class="calories__hr_wrapper">
+                <hr>
+                <p class="normal_text">520 ккал</p>
+            </div>
+        </div>
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Обед</p>
+                    <p class="normal_text">Рекомендуется 500-600 ккал</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+            
+            <div class="calories__hr_wrapper">
+                <hr>
+                <p class="normal_text">520 ккал</p>
+            </div>
+        </div>
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Ужин</p>
+                    <p class="normal_text">Рекомендуется 500-600 ккал</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+            
+            <div class="calories__hr_wrapper">
+                <hr>
+                <p class="normal_text">520 ккал</p>
+            </div>
+        </div>
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Ланч</p>
+                    <p class="normal_text">Рекомендуется 500-600 ккал</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+            
+            <div class="calories__hr_wrapper">
+                <hr>
+                <p class="normal_text">520 ккал</p>
+            </div>
+        </div>
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Добавить физ. нагрузку</p>
+                    <p class="normal_text">Рекомендуется 30 минут</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+        </div>
+        <div class="calories__eating_time">
+            <div class="eating_time_text__wrapper">
+                <div class="image_wrapper">
+                    <img src="" alt="" class="image calories__image">
+                </div>
+                <div class="text__wrapper">
+                    <p class="normal_plus_text">Вода</p>
+                    <p class="normal_text">Овсянка, яблоко, пиво</p>
+                </div>
+                <a href="" class="plus_button calories__button">
+                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+                </a>
+            </div>
+            
+        </div>
+    </div>
 </div>

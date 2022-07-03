@@ -136,6 +136,13 @@ input:focus:-ms-input-placeholder {
   font-size: 20px;
 }
 
+.normal_plus_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #0E0E11;
+  font-size: 26px;
+}
+
 .big_text {
   font-family: "Roboto", sans-serif;
   font-weight: regular;
@@ -226,6 +233,52 @@ input:focus:-ms-input-placeholder {
   width: 81px;
 }
 
+.calories__eating_time_block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 20px;
+}
+
+.calories__eating_time {
+  min-width: 49.1%;
+  max-width: 650px;
+  height: 206px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+}
+
+.eating_time_text__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 32px 50px 10px 29px;
+}
+
+.image_wrapper {
+  height: 97px;
+  width: 97px;
+}
+.image_wrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.text__wrapper {
+  padding-left: -20px;
+}
+.text__wrapper .normal_plus_text {
+  text-align: left;
+}
+
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -287,6 +340,13 @@ input:focus:-ms-input-placeholder {
   font-size: 20px;
 }
 
+.normal_plus_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #0E0E11;
+  font-size: 26px;
+}
+
 .big_text {
   font-family: "Roboto", sans-serif;
   font-weight: regular;
@@ -316,6 +376,25 @@ input:focus:-ms-input-placeholder {
 }
 body {
   background-color: #EEEEEE;
+}
+
+.wrapper {
+  display: table;
+  height: 100%;
+  width: 100%;
+}
+.wrapper .content {
+  display: table-row;
+  height: 100%;
+  margin: 0 auto;
+}
+
+hr {
+  border: 1px solid #EEEEEE;
+}
+
+.image {
+  background-color: #F4F3F0;
 }
 
 .header {
@@ -532,12 +611,9 @@ body {
   }
 }
 footer {
-  position: absolute;
   background: #FFFFFF;
   width: 100%;
   height: 320px;
-  bottom: 0;
-  left: 0;
   padding: 0 10px;
 }
 footer .footer__container {
@@ -664,6 +740,9 @@ footer .footer__image_container .footer__image {
   height: 95%;
   background-color: white;
   margin: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   border-radius: 20px;
   text-align: center;
   -webkit-box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);

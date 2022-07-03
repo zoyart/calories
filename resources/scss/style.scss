@@ -10,14 +10,29 @@ body {
     
 }
 
-
+.wrapper {
+    display: table;
+    height: 100%;
+    width: 100%;
+    .content {
+        display: table-row;
+        height: 100%;
+        margin: 0 auto;
+    }
+    
+}
+hr {
+    border: 1px solid #EEEEEE;
+}
+.image {
+    background-color: $grey;
+}
 /////////////////header///////////////////////
 .header {
     display: flex;
     justify-content: space-between;
     background-color: $white;
     height: 90px;
-
     .header__logo_container {
         margin-left: 30px;
         max-width: 57px;
@@ -236,12 +251,9 @@ body {
 
 ///////////////////Footer//////////////////////////
 footer {
-    position: absolute;
     background: $white;
     width: 100%;
     height: 320px;
-    bottom: 0;
-    left: 0;
     padding: 0 10px;
 
     .footer__container {
@@ -380,6 +392,7 @@ footer {
     height: 95%;
     background-color: white;
     margin: auto;
+    justify-content: center;
     border-radius: 20px;
     text-align: center;
     box-shadow: 12px 12px 10px 1px rgba(91, 134, 108, 0.2);

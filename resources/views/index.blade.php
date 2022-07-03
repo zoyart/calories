@@ -6,11 +6,7 @@
 
 
 @section('content')
-
-    Это главная страница
-    <a href="{{ route('register.form') }}">
-        Регистрация
-    </a>
+    
 @endsection
 
 <script>

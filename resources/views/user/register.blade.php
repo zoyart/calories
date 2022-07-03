@@ -49,7 +49,7 @@
     @if($errors)
 
     @endif
-    <form id="main-form" action="{{ route('register.store') }}" method="POST">
+    <form id="main-form" action="{{ route('register.store') }}" method="POST" class="">
         @csrf
             <div class="container active">
                 <h1 class="very_big_text calories">Calories</h1>

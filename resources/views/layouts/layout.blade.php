@@ -15,12 +15,16 @@
 </head>
 
 
-@include('layouts.header')
+
 
 <body>
-
-    @yield('content')
-    @include('calories.calories')
+    <div class="wrapper">
+        @include('layouts.header')
+        @yield('content')
+        @include('calories.calories')
+        @include('layouts.footer')
+    </div>
+        
     <!-- JavaScript Bundle with Popper -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous">
@@ -35,4 +39,4 @@
 
 </body>
 
-@include('layouts.footer')
+
