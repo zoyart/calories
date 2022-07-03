@@ -14,7 +14,6 @@ class RegistrationController extends Controller
             'purpose' => 'required|max:512',
         ]);
 
-//      Надо бы проверить какое будет число, int или float
         $weight = (float) $request->weight;
         $purpose_weight = (float) $request->purpose_weight;
 

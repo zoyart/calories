@@ -32,6 +32,7 @@
             crossorigin="anonymous">
     </script>
 
+
 </body>
 
 @include('layouts.footer')

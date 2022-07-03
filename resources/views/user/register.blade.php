@@ -46,13 +46,11 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div> -->
-    <div>
-        ВАкансия 1
-    </div>
-    <div>
-        ВАкансия 2
-    </div>
-    <form id="main-form" action="">
+    @if($errors)
+
+    @endif
+    <form id="main-form" action="{{ route('register.store') }}" method="POST">
+        @csrf
             <div class="container active">
                 <h1 class="very_big_text calories">Calories</h1>
                 <div class="form_container">
@@ -82,13 +80,13 @@
                     <h2 class="big_text form__text">Enter your data</h2>
                     <div class="form">
                         <div class="log_wrapper">
-                            <input type="number" name="number" class="bold_text login log__input" placeholder="Your age">
+                            <input type="number" name="age" class="bold_text login log__input" placeholder="Your age">
                         </div>
                         <div class="log_wrapper">
-                            <input type="number" name="number" class="bold_text login log__input" placeholder="Your height">
+                            <input type="number" name="growth" class="bold_text login log__input" placeholder="Your height">
                         </div>
                         <div div class="log_wrapper">
-                            <input type="number" name="number" class="bold_text log__input" placeholder="Your weight">
+                            <input type="number" name="weight" class="bold_text log__input" placeholder="Your weight">
                         </div>
                         <button type="button" class="log_wrapper submit_wrapper">
                             <p class="bold_text submit_text">CONTINUE</p>
@@ -150,19 +148,18 @@
                             <input type="text" name="name" class="bold_text login log__input" placeholder="Name">
                         </div>
                         <div class="log_wrapper">
-                            <input type="email" name="login" class="bold_text login log__input" placeholder="Email">
+                            <input type="email" name="email" class="bold_text login log__input" placeholder="Email">
                         </div>
                         <div div class="log_wrapper">
-                            <input type="password" name="pass" class="bold_text log__input" placeholder="Password">
+                            <input type="password" name="password" class="bold_text log__input" placeholder="Password">
                         </div>
                         <div class="log_wrapper submit_wrapper">
                             <input class="bold_text submit_text" type="submit" value="REGISTER"></p>
                         </div>
                     </div>
-                    <p class="normal_text forgot_text"><a href="#" class="link_text">Or login to your account</a></p>
+                    <p class="normal_text forgot_text">Or <a style="color:#62E48B;" href="#" class="link_text">login</a> to your account</p>
                 </div>
             </div>
         </form>
-
 @endsection
 
