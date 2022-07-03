@@ -316,9 +316,6 @@ input:focus:-ms-input-placeholder {
 }
 body {
   background-color: #EEEEEE;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
 }
 
 .header {
