@@ -1,11 +1,11 @@
 <?php
 
 use App\Http\Controllers\Calories\CaloriesController;
-use App\Http\Controllers\Recipes\RecipesController;
+use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
-
+use \App\Http\Controllers\Admin\AdminController;
 
 // General page
 Route::view('/', 'index')->name('index');
@@ -21,7 +21,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-Route::group(['middleware' => 'auth'], function () {
+//Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('logout');
 
     // Profile
@@ -34,6 +34,14 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/calories', [CaloriesController::class, 'index'])->name('calories.index');
 
     // Recipes
-    Route::get('/recipes', [RecipesController::class, 'index'])->name('recipes.index');
-    Route::get('/recipes/{recipeId}', [RecipesController::class, 'show'])->name('recipes.show');
-});
+    Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
+    Route::get('/recipes/{recipeId}', [RecipeController::class, 'show'])->name('recipes.show');
+
+    Route::prefix('/admin')->group(function () {
+        Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+        Route::get('/recipes', [RecipeController::class, 'index'])->name('admin.recipes.index');
+
+    });
+
+//});
+
