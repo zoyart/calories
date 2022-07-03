@@ -19,7 +19,7 @@ class UserController extends Controller
         return view('user.login');
     }
 
-    public function store(StoreRegistrationRequest $request) {
+    public function store(Request $request) {
 //        dd($request);
         $weight = $request->input('weight');
         $growth = $request->input('growth');

@@ -10,6 +10,11 @@
                 <a href="#" class="normal_text header__text">Calories</a>
                 <a href="#" class="normal_text header__text">Recipes</a>
                 <a href="#" class="normal_text header__text">Progress</a>
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{ route('profile.show') }}">
+                        Account (change later)
+                    </a>
+                @endif
             </div>
         </div>
         <div class="hamburger-menu">
@@ -22,19 +27,12 @@
                 <a href="#" class="big_text header__text menu__item">Recipes</a>
                 <a href="#" class="big_text header__text menu__item">Progress</a>
             </ul>
+
         </div>
     </nav>
 
     <div class="header__login_container">
-        @if(\Illuminate\Support\Facades\Auth::check())
-            <form method="post" action="{{ route('logout') }}">
-                @csrf
-                <button type="submit" class="login_button_wrapper">
-                    <p class="bold_text login_button">Logout</p>
-                </button>
-            </form>
-
-        @else
+        @if(!\Illuminate\Support\Facades\Auth::check())
             <a href="{{ route('login.form') }}" class="login_button_wrapper">
                 <p class="bold_text login_button">Sign in</p>
             </a>

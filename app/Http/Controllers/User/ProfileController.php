@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
 
 class ProfileController extends Controller
 {
@@ -46,7 +47,7 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $userId = Auth::user()->id;
-        $user = User::find($userId)->delete();
+        $user = User::find($userId);
         $user->update($request->all());
 
         return redirect()->route('profile.show');

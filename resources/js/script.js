@@ -45,4 +45,3 @@ function submitBtnsFun(sendButtons, pages) {
 }
 submitBtnsFun(submitBtns, pages);
 
-
