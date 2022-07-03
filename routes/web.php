@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Calories\CaloriesController;
+use App\Http\Controllers\Calories\CalorieController;
 use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserController;
@@ -31,7 +31,7 @@ Route::group(['middleware' => 'guest'], function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Calories
-    Route::get('/calories', [CaloriesController::class, 'index'])->name('calories.index');
+    Route::get('/calories', [CalorieController::class, 'index'])->name('calories.index');
 
     // Recipes
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
@@ -39,8 +39,10 @@ Route::group(['middleware' => 'guest'], function () {
 
     Route::prefix('/admin')->group(function () {
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
-        Route::get('/recipes', [RecipeController::class, 'index'])->name('admin.recipes.index');
+        Route::get('/recipes', [RecipeController::class, 'adminIndex'])->name('admin.recipes.index');
 
+        // Логин в админке
+        Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
     });
 
 //});

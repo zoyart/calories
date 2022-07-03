@@ -1,3 +1,14 @@
+@extends('layouts.layout')
+
+@section('head-title')
+    Calories
+@endsection
+
+
+@section('content')
+
+
+
 <div class="calories_page __container">
     <div class="calories__date">
         <p class="normal_text">Today, June 25</p>
@@ -55,7 +66,7 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-            
+
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ккал</p>
@@ -74,7 +85,7 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-            
+
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ккал</p>
@@ -93,7 +104,7 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-            
+
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ккал</p>
@@ -112,7 +123,7 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-            
+
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ккал</p>
@@ -145,7 +156,8 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-            
+
         </div>
     </div>
 </div>
+@endsection

@@ -7,8 +7,8 @@
     <nav class="header__nav_container">
         <div class="nav__wrapper">
             <div class="header__text_wrapper">
-                <a href="#" class="normal_text header__text">Calories</a>
-                <a href="#" class="normal_text header__text">Recipes</a>
+                <a href="{{ route('calories.index') }}" class="normal_text header__text">Calories</a>
+                <a href="{{ route('recipes.index') }}" class="normal_text header__text">Recipes</a>
                 <a href="#" class="normal_text header__text">Progress</a>
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <a href="{{ route('profile.show') }}">
