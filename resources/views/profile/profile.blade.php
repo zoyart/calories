@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('head-title')
-    Главная
+    Профиль
 @endsection
 
 
