@@ -1,7 +1,7 @@
 @extends('layouts.admin_layout')
 
 @section('head-title')
-    Admin home
+    Recipes
 @endsection
 
 
@@ -40,46 +40,57 @@
                 </ul>
             </div>
         </div>
-        <div class="content p-4 w-100">
-            <div class="row pb-3">
-                <span style="font-size: 32px">Recipes</span>
+        <div class="content p-4 w-100 mx-3">
+            <div class="row pb-3 fs-2">
+                Recipes
             </div>
-            <div class="row pb-4 d-flex flex-shrink-0 px-2">
+            <div class="row pb-4 d-flex">
                 <div class="card" style="max-width: 20rem; margin: 0px 20px 20px 0px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">12</h5>
-                        <p class="card-text">Количество рецептов</p>
+                        <p class="card-text">Recipes</p>
                     </div>
                 </div>
                 <div class="card" style="max-width: 20rem; margin: 0px 20px 20px 0px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">3</h5>
-                        <p class="card-text">Категорий</p>
+                        <p class="card-text">Categories</p>
                     </div>
                 </div>
                 <div class="card" style="max-width: 20rem; margin: 0px 20px 20px 0px;">
                     <div class="card-body text-center">
                         <h5 class="card-title">10</h5>
-                        <p class="card-text">Не опубликованных</p>
+                        <p class="card-text">Unpublished</p>
                     </div>
                 </div>
+            </div>
+            <div class="row pb-4 d-flex">
+                <button type="button" class="btn btn-outline-success">Create</button>
             </div>
             <div class="row pb-4">
                 <table class="table table-borderless">
                     <thead>
                     <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Название</th>
-                        <th scope="col">Категория</th>
-                        <th scope="col">Опубликован</th>
-                        <th scope="col">Автор</th>
-                        <th scope="col">Дата создания</th>
-                        <th scope="col">Дата редактирования</th>
+                        <th scope="col">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Published</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Created at</th>
+                        <th scope="col">Updated at</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <th scope="row">1</th>
+                        <td>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            </div>
+                        </td>
                         <td>
                             <a href="#" class="link-primary">Овсянка</a>
                         </td>

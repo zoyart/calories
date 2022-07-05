@@ -14,6 +14,11 @@ class RecipeController extends Controller
      */
     public function index()
     {
+        return view('recipes.recipes');
+    }
+
+    public function adminIndex()
+    {
         return view('admin.recipes.recipes');
     }
 

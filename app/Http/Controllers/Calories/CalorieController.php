@@ -14,7 +14,7 @@ class CalorieController extends Controller
      */
     public function index()
     {
-        //
+        return view('calories.calories');
     }
 
     /**
