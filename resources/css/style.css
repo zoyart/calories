@@ -526,36 +526,39 @@ hr {
   background-color: #F4F3F0;
 }
 
+.header__container {
+  background-color: #FFFFFF;
+}
+
 .header {
+  max-width: 95%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #FFFFFF;
   height: 90px;
+  margin: 0 auto;
 }
 .header .header__logo_container {
-  margin-left: 30px;
-  max-width: 57px;
+  margin: auto 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
-.header .header__logo_container .header__logo {
-  margin: auto;
-  height: 100%;
+.header .header__logo_container a {
+  max-width: 100%;
+}
+.header .header__logo {
+  margin: auto 0;
+  width: 48px;
+  height: 48px;
 }
 .header .header__nav_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-.header .header__nav_container .nav__wrapper {
   margin: auto;
 }
-.header .header__text_wrapper {
+.header .header__nav_container .nav__wrapper {
   margin: auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -570,7 +573,7 @@ hr {
   color: #41CD8C;
 }
 .header .header__login_container {
-  margin: auto 30px auto 0;
+  margin: auto 0 auto 0;
   max-width: 90px;
 }
 .header .header__login_container .login_button_wrapper {
@@ -681,6 +684,9 @@ hr {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   gap: 20px;
   position: fixed;
   visibility: hidden;
@@ -711,6 +717,10 @@ hr {
     max-height: 30px;
   }
 }
+.hamburger-menu {
+  display: none;
+}
+
 @media (max-width: 767.98px) {
   .header__logo_container {
     display: none;
@@ -727,10 +737,22 @@ hr {
     display: none;
   }
 
+  .header__logo {
+    display: none;
+  }
+
+  .burger__logo {
+    display: block;
+  }
+
   .menu__btn {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+
+  .hamburger-menu {
+    display: block;
   }
 
   .header__login_container {

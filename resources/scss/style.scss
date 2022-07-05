@@ -7,56 +7,61 @@
 body {
     // background-image: linear-gradient(#A8F3A4, #62E48B);
     background-color: #EEEEEE;
-    
+
 }
 
 .wrapper {
     display: table;
     height: 100%;
     width: 100%;
+
     .content {
         display: table-row;
         height: 100%;
         margin: 0 auto;
     }
-    
+
 }
+
 hr {
     border: 1px solid #EEEEEE;
 }
+
 .image {
     background-color: $grey;
 }
+
 /////////////////header///////////////////////
+.header__container {
+    background-color: $white;
+}
+
 .header {
+    max-width: 95%;
     display: flex;
     justify-content: space-between;
-    background-color: $white;
     height: 90px;
+    margin: 0 auto;
     .header__logo_container {
-        margin-left: 30px;
-        max-width: 57px;
+        margin: auto 0;
         display: flex;
-
-        .header__logo {
-            margin: auto;
-            height: 100%;
+        a {
+            max-width: 100%;
         }
+        
     }
-
+    .header__logo {
+        margin: auto 0;
+        width: 48px;
+        height: 48px;
+    }
     .header__nav_container {
-        display: flex;
-
+        margin: auto;
         .nav__wrapper {
             margin: auto;
+            display: flex;
+            gap: 60px;
         }
-
-    }
-
-    .header__text_wrapper {
-        margin: auto;
-        display: flex;
-        gap: 60px;
 
     }
 
@@ -69,8 +74,8 @@ hr {
     }
 
     .header__login_container {
-        margin: auto 30px auto 0;
-
+        margin: auto 0 auto 0;
+        
         max-width: 90px;
 
         .login_button_wrapper {
@@ -184,6 +189,7 @@ hr {
 .menu__box {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     position: fixed;
     visibility: hidden;
@@ -198,7 +204,6 @@ hr {
     background-color: #ECEFF1;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     transition-duration: .25s;
-
     .menu__item {
         text-align: center;
     }
@@ -213,7 +218,9 @@ hr {
         max-height: 30px;
     }
 }
-
+.hamburger-menu {
+    display: none;
+}
 @media (max-width: 1199.98px) {}
 
 @media (max-width: 991.98px) {}
@@ -224,6 +231,7 @@ hr {
 
         .header__logo {
             display: none;
+
         }
     }
 }
@@ -236,11 +244,20 @@ hr {
             display: none;
         }
     }
+    .header__logo {
+        display: none;
 
+    }
+    .burger__logo {
+        display: block;
+        
+    }
     .menu__btn {
         display: flex;
     }
-
+    .hamburger-menu {
+        display: block;
+    }
     .header__login_container {
         position: absolute;
         right: 30px;
@@ -383,10 +400,12 @@ footer {
     width: 100%;
     height: 100%;
 }
+
 .strip {
     height: 1px;
     border: 1px solid $grey
 }
+
 .container {
     width: 75%;
     height: 95%;
