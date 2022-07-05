@@ -16,25 +16,22 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('email')->unique();
-            $table->string('password');
-            $table->char('gender');
-            $table->char('purpose');
-            $table->char('workout');
+            $table->string('email', 255)->unique();
+            $table->string('password', 255);
+            $table->char('gender')->nullable();
+            $table->char('purpose')->nullable();
+            $table->char('workout')->nullable();
 
-            $table->float('pace');
-            $table->smallInteger('weight');
-            $table->smallInteger('purpose_weight');
-            $table->smallInteger('growth');
-            $table->smallInteger('age');
-            $table->smallInteger('calories_per_day');
+            $table->float('pace')->nullable();
+            $table->smallInteger('weight')->nullable();
+            $table->smallInteger('purpose_weight')->nullable();
+            $table->smallInteger('growth')->nullable();
+            $table->smallInteger('age')->nullable();
+            $table->smallInteger('calories_per_day')->nullable();
 
             $table->timestamp('email_verified_at')->nullable();
             $table->rememberToken();
             $table->timestamps();
-
-//            цель: сбросить поддержать или набрать
-//            темпы потери/набора веса
         });
     }
 

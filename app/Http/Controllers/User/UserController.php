@@ -72,6 +72,8 @@ class UserController extends Controller
         $validation = $request->validate([
             ''
         ]);
+
+        Auth::attempt();
     }
 
     public function logout() {

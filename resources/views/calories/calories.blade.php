@@ -7,8 +7,6 @@
 
 @section('content')
 
-
-
 <div class="calories_page __container">
     <div class="calories__date">
         <p class="normal_text">Today, June 25</p>

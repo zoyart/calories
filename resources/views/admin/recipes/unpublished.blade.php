@@ -6,6 +6,40 @@
 
 
 @section('content')
+    <div class="panel d-flex flex-row">
+        <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark min-h-100 vh-100" style="width: 360px;">
+            <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                <span class="fs-4">Calories</span>
+            </a>
+            <hr>
+            <ul class="nav nav-pills flex-column mb-auto">
+                <li class="nav-item">
+                    <a href="{{ route('admin.index') }}" class="nav-link text-white" aria-current="page">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('admin.recipes.index') }}" class="nav-link active">
+                        Recipes
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="dropdown">
+                <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                   id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                    <strong>mdo</strong>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1" style="">
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
         <div class="content m-5 w-100">
             <div class="row mb-3 fs-2">
                 <div class="col">
@@ -14,29 +48,25 @@
             </div>
             <div class="row pb-4 ">
                 <div class="col">
-                    <a href="{{ route('admin.recipes.index') }}" class="link-dark" style="text-decoration: none;">
-                        <div class="card border-primary" style=" margin: 0px 20px 20px 0px;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{ $recipesCount }}</h5>
-                                <p class="card-text">Recipes</p>
-                            </div>
+                    <div class="card" style=" margin: 0px 20px 20px 0px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">12</h5>
+                            <p class="card-text">Recipes</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col">
-                    <a href="{{ route('admin.categories.index') }}" class="link-dark" style="text-decoration: none;">
-                        <div class="card" style="margin: 0px 20px 20px 0px;">
-                            <div class="card-body text-center">
-                                <h5 class="card-title">{{ $categoriesCount }}</h5>
-                                <p class="card-text">Categories</p>
-                            </div>
+                    <div class="card" style="margin: 0px 20px 20px 0px;">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">3</h5>
+                            <p class="card-text">Categories</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
                 <div class="col">
                     <div class="card" style=" margin: 0px 20px 20px 0px;">
                         <div class="card-body text-center">
-                            <h5 class="card-title">0</h5>
+                            <h5 class="card-title">10</h5>
                             <p class="card-text">Unpublished</p>
                         </div>
                     </div>
@@ -45,20 +75,13 @@
             <div class="row mb-4">
                 <div class="col">
                     <form action="{{ route('admin.recipes.create') }}" method="get">
-                        <button type="submit" class="btn btn-outline-success">Create recipe</button>
+                        <button type="submit" class="btn btn-outline-success">Create</button>
                     </form>
-                </div>
-            </div>
-            <div class="row mb-4">
-                <div class="col">
-                    <div class="w-100">
-                        <input type="text" class="form-control" id="search" placeholder="Recipe Search">
-                    </div>
                 </div>
             </div>
             <div class="row pb-4">
                 <div class="col">
-                    <table class="table table-borderless" id="table">
+                    <table class="table table-borderless">
                         <thead>
                         <tr>
                             <th scope="col">
@@ -95,6 +118,6 @@
                 </div>
             </div>
         </div>
-
+    </div>
 
 @endsection
