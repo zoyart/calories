@@ -28,7 +28,7 @@ Route::group(['middleware' => 'guest'], function () {
 
 // Маршрутизация для основного функционала
 Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
@@ -68,8 +68,5 @@ Route::prefix('/admin')->group(function () {
     Route::group(['middleware' => 'guest'], function () {
         Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
         Route::post('/auth', [AdminController::class, 'auth'])->name('admin.auth');
-    });
-    Route::group(['middleware' => 'auth'], function () {
-        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
     });
 });

@@ -26,7 +26,7 @@
             <p class="normal_text">CONSUMPTION</p>
         </div>
         <div class="calories__calories_left">
-            <div class="calorius_wrapper">  
+            <div class="calorius_wrapper">
                 <p class="big_text">2000</p>
                 <p class="normal_text">CALLORY REMAINED</p>
             </div>
@@ -164,14 +164,10 @@
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
                 </a>
             </div>
-<<<<<<< HEAD
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ml</p>
             </div>
-=======
-
->>>>>>> c412f040ae48240063610fc60a7ebc0994c07449
         </div>
     </div>
 </div>

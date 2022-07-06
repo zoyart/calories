@@ -129,7 +129,7 @@
         </div>
         <div class="row pb-4">
             <div class="col">
-                <form action="{{ route('admin.categories.destroyFew') }}" method="post" id="table_checkbox">
+                <form action="{{ route('admin.categories.edit') }}" method="get" id="table_checkbox">
                     @csrf
                     <table class="table table-borderless" id="table">
                         <thead>
