@@ -6,8 +6,103 @@
 
 
 @section('content')
-    <div class="container">
-        <div class="user__data">
+    <div class="profile_page __container">
+        <div class="profile__basic_information">
+            <a href="{{ route('profile.show') }}">
+                <img src="{{ asset('\resources\img\profile.png') }}" alt="" class="header__logo">
+            </a>
+            <p class="big_text">Artur Tsoi</p>
+        </div> 
+        <div class="profile__data_container">
+            <div class="profile__personal_data">
+                <div class="profile__personal_data_block block">
+                    <p class="normal_text fisrt_child">Личные данные</p>
+                    <p class="normal_text">
+                        Name:
+                        {{ $user->name }}
+                    </p>
+                    <p class="normal_text">
+                        email:
+                        {{ $user->email }}
+                    </p>
+                    <p class="normal_text">
+                        gender:
+                        {{ $user->gender }}
+                    </p>
+                    <p class="normal_text">
+                        purpose:
+                        {{ $user->purpose }}
+                    </p>
+                    <p class="normal_text">
+                        workout:
+                        {{ $user->workout }}
+                    </p>
+                    <p class="normal_text">
+                        pace:
+                        {{ $user->pace }}
+                    </p>
+                    <p class="normal_text">
+                        weight:
+                        {{ $user->weight }}
+                    </p>
+                    <p class="normal_text">
+                        purpose_weight:
+                        {{ $user->purpose_weight }}
+                    </p>
+                    <p class="normal_text">
+                        growth:
+                        {{ $user->growth }}
+                    </p>
+                    <p class="normal_text">
+                        age:
+                        {{ $user->age }}
+                    </p>
+                    <p class="normal_text">
+                        calories_per_day:
+                        {{ $user->calories_per_day }}
+                    </p>
+                    <p class="normal_text">
+                        created_at:
+                        {{ $user->created_at }}
+                    </p>
+                </div>
+                <div class="profile__personal_data_btns">
+                    <form action="{{ route('profile.edit') }}">
+                        <button type="submit" class="profile__update_btn profile__btn">
+                            <p class="normal_plus_text">ОБНОВИТЬ ДАННЫЕ</p>
+                        </button>
+                    </form>
+                    <form action="{{ route('logout') }}">
+                        <button type="submit" class="profile__exit_btn profile__btn">
+                            <p class="normal_plus_text">ВЫЙТИ ИЗ АККАУНТА</p>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="profile__statistic_data">
+                <div class="profile__body_block block">
+                    <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
+                    <p class="normal_text">Параметры тела</p>
+                    <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
+                </div>
+                <div class="profile__body_block block">
+                    <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
+                    <p class="normal_text">Статистика</p>
+                    <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
+                </div>
+                <div class="profile__body_block block">
+                    <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
+                    <p class="normal_text">Избранное</p>
+                    <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
+                </div>
+                <div class="profile__succes_block block">
+                    <p class="normal_text fisrt_child">Личные данные</p>
+                    <div class="calories__success_wall"></div>
+                </div>
+            </div>
+        </div>  
+    </div>
+<!-- <div class="user__data">
             <div>
                 Name:
                 {{ $user->name }}
@@ -62,7 +157,5 @@
             <form action="{{ route('logout') }}">
                 <button type="submit" class="btn btn-outline-danger mt-3">Выйти</button>
             </form>
-        </div>
-    </div>
-
+        </div> -->
 @endsection

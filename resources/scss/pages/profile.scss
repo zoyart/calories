@@ -1,0 +1,92 @@
+@import "../variables.scss";
+
+.block {
+    border-radius: 10px;
+    background-color: $white;
+    padding: 34px 25px;
+}
+
+// Profile
+.profile_page {
+    display: flex;
+    flex-direction: column;
+    margin: 90px auto 150px auto
+}
+.profile__basic_information {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 91px;
+    p {
+        margin: auto 0 auto 42px;
+    }
+    .header__logo {
+        width: 168px;
+        height: 168px;
+    }
+}
+.profile__data_container {
+    display: flex;
+    column-gap: 20px;
+}
+.profile__personal_data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 710px;
+}
+.profile__personal_data_block {
+    width: 650px;
+    height: 526px;
+    max-height: 526px;
+    .fisrt_child {
+        text-align: center;
+    }
+}
+.profile__personal_data_btns {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    .profile__btn {
+        width: 650px;
+        height: 75px;
+        border-radius: 90px;
+        p {
+            color: $white;
+            margin: auto;
+        }
+    }
+    .profile__update_btn {
+        background-color: $green;
+    }
+    .profile__exit_btn {
+        background-color: $red;
+    }
+}
+.profile__statistic_data {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.profile__body_block {
+    display: flex;
+    justify-content: space-between;
+    width: 650px;
+    height: 90px;
+    padding: 21px 70px 21px 20px;
+    p {
+        margin: auto 0 auto -250px;
+    }
+}
+
+
+.profile__succes_block {
+    width: 650px;
+    height: 385px;
+    text-align: center;
+    .calories__success_wall {
+        width: 539px;
+        height: 280px;
+        background-color: $grey;
+        margin: 0 auto;
+    }
+}
