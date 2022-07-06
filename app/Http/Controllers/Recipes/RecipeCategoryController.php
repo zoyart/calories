@@ -3,11 +3,12 @@
 namespace App\Http\Controllers\Recipes;
 
 use App\Http\Controllers\Controller;
-use App\Models\Recipe;
 use App\Models\Category;
+use App\Models\Recipe;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class RecipeController extends Controller
+class RecipeCategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,22 +17,11 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
-        return view('recipes.recipes', compact('recipes'));
-    }
-
-    public function adminIndex()
-    {
+        $categories = Category::where('type', 'recipes')->get();
         $recipesCount = Recipe::all()->count();
         $categoriesCount = Category::all()->count();
-        $recipes = Recipe::all();
 
-        return view('admin.recipes.recipes', compact('recipesCount', 'recipes', 'categoriesCount'));
-    }
-
-    public function unpublished()
-    {
-
+        return view('admin.categories.categories', compact('categories', 'recipesCount', 'categoriesCount'));
     }
 
     /**
@@ -41,9 +31,7 @@ class RecipeController extends Controller
      */
     public function create()
     {
-        $categories = Category::where('type', 'recipes')->get();
-
-        return view('admin.recipes.create', compact('categories'));
+        //
     }
 
     /**
@@ -54,7 +42,13 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $category = Category::create([
+            'name' => $request->name,
+            'author' => Auth::user()->name,
+            'type' => 'recipes',
+        ]);
+
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -74,9 +68,23 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $requestParameters = ($request->request);
+        dd($requestParameters);
+
+        $ids = array();
+
+        foreach ($requestParameters as $key => $value) {
+            if ($key !== '_token') {
+                array_push($ids, $value);
+            }
+        }
+
+        $categories = Category::where('id', 7)->get();
+        dd($categories);
+
+        return view('admin.categories.edit');
     }
 
     /**
@@ -86,9 +94,15 @@ class RecipeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $category = Category::create([
+            'name' => $request->name,
+            'author' => Auth::user()->name,
+            'type' => 'recipes',
+        ]);
+
+        return response()->json('200');
     }
 
     /**
@@ -100,5 +114,18 @@ class RecipeController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroyFew(Request $request)
+    {
+        Category::destroy($request->all());
+
+        return redirect()->route('index');
     }
 }

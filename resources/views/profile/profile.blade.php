@@ -12,7 +12,7 @@
                 <img src="{{ asset('\resources\img\profile.png') }}" alt="" class="header__logo">
             </a>
             <p class="big_text">Artur Tsoi</p>
-        </div> 
+        </div>
         <div class="profile__data_container">
             <div class="profile__personal_data">
                 <div class="profile__personal_data_block block cont">
@@ -72,8 +72,14 @@
                             <p class="normal_plus_text">ОБНОВИТЬ ДАННЫЕ</p>
                         </button>
                     </form>
+<<<<<<< HEAD
                     <form action="{{ route('logout') }}">
                         <button type="submit" class="profile__exit_btn profile__btn cont">
+=======
+                    <form action="{{ route('logout') }}" method="get">
+                        @csrf
+                        <button type="submit" class="profile__exit_btn profile__btn">
+>>>>>>> 59674effb73bd6e151e31650e79efc649ebeef6e
                             <p class="normal_plus_text">ВЫЙТИ ИЗ АККАУНТА</p>
                         </button>
                     </form>
@@ -100,7 +106,7 @@
                     <div class="calories__success_wall"></div>
                 </div>
             </div>
-        </div>  
+        </div>
     </div>
 <!-- <div class="user__data">
             <div>

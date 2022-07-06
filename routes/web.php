@@ -6,10 +6,15 @@ use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\AdminController;
+use \App\Http\Controllers\Recipes\RecipeCategoryController;
+use \App\Http\Controllers\Admin\EmployeeController;
+
 
 // General page
 Route::view('/', 'index')->name('index');
 
+
+// Маршрутизация для регистрации
 Route::group(['middleware' => 'guest'], function () {
     // Register
     Route::get('/register', [UserController::class, 'registerForm'])->name('register.form');
@@ -21,8 +26,9 @@ Route::group(['middleware' => 'guest'], function () {
 
 });
 
-//Route::group(['middleware' => 'auth'], function () {
-    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
+// Маршрутизация для основного функционала
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
 
     // Profile
     Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
@@ -37,13 +43,30 @@ Route::group(['middleware' => 'guest'], function () {
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
     Route::get('/recipes/{recipeId}', [RecipeController::class, 'show'])->name('recipes.show');
 
+
+    // Маршрутизация для админки
     Route::prefix('/admin')->group(function () {
+        // Главная страница админ панели
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
+
+        // Взаимодействие с рецептами
         Route::get('/recipes', [RecipeController::class, 'adminIndex'])->name('admin.recipes.index');
+        Route::get('/recipes/create', [RecipeController::class, 'create'])->name('admin.recipes.create');
 
-        // Логин в админке
-        Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+        // Взаимодействие с категориями
+        Route::get('/categories', [RecipeCategoryController::class, 'index'])->name('admin.categories.index');
+        Route::post('/categories', [RecipeCategoryController::class, 'store'])->name('admin.categories.store');
+        Route::get('/categories/edit', [RecipeCategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::post('/categories/update', [RecipeCategoryController::class, 'update'])->name('admin.categories.update');
+        Route::delete('/categories/{id}', [RecipeCategoryController::class, 'destroy'])->name('admin.categories.destroy');
+        Route::post('/categories/destroy_few', [RecipeCategoryController::class, 'destroyFew'])->name('admin.categories.destroyFew');
     });
+});
 
-//});
-
+// Авторизация в админке
+Route::prefix('/admin')->group(function () {
+    Route::group(['middleware' => 'guest'], function () {
+        Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+        Route::post('/auth', [AdminController::class, 'auth'])->name('admin.auth');
+    });
+});

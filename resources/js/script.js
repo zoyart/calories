@@ -1,3 +1,5 @@
+
+
 // Activities
 const activitiesBtns = document.querySelectorAll(".activities__div");
 const activitiesValue = document.getElementById("activities-value_input");

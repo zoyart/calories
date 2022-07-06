@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Employee;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -15,73 +17,10 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
-    }
+        $usersCount = User::all()->count();
+//        $employeeCount User::where()->count();
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('admin.index', compact('usersCount'));
     }
 
     public function login()
@@ -89,14 +28,23 @@ class AdminController extends Controller
         return view('admin.user.login');
     }
 
-    public function auth()
+    public function auth(Request $request)
     {
-        return 'hello';
+        $rememberMe =  ($request->input('rememberMe') === "1") ? 1 : 0;
+
+        if (Auth::attempt([
+            'email' => $request->email,
+            'password' => $request->password,
+        ], $rememberMe)) {
+            return redirect()->route('admin.index');
+        }
+
+        return redirect()->route('admin.index');
     }
 
     public function logout()
     {
         Auth::logout();
-        return redirect()->back();
+        return redirect()->route('admin.login');
     }
 }
