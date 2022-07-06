@@ -656,7 +656,7 @@ input:focus:-ms-input-placeholder {
 }
 
 .profile__personal_data_block {
-  width: 650px;
+  width: 590px;
   height: 526px;
   max-height: 526px;
 }
@@ -675,7 +675,7 @@ input:focus:-ms-input-placeholder {
   gap: 20px;
 }
 .profile__personal_data_btns .profile__btn {
-  width: 650px;
+  width: 590px;
   height: 75px;
   border-radius: 90px;
 }
@@ -708,26 +708,67 @@ input:focus:-ms-input-placeholder {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 650px;
+  width: 590px;
   height: 90px;
   padding: 21px 70px 21px 20px;
 }
 .profile__body_block p {
-  margin: auto 0 auto -250px;
+  margin: auto;
 }
 
 .profile__succes_block {
-  width: 650px;
+  width: 590px;
   height: 385px;
   text-align: center;
+  padding: 34px 15px;
 }
 .profile__succes_block .calories__success_wall {
-  width: 539px;
+  max-width: 539px;
   height: 280px;
   background-color: #F4F3F0;
   margin: 0 auto;
 }
 
+@media (max-width: 1400px) {
+  .cont {
+    max-width: 470px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .cont {
+    max-width: 374px;
+  }
+}
+@media (max-width: 835px) {
+  .profile__data_container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 40px;
+    margin: 0 auto;
+    max-width: 480px;
+  }
+
+  .cont {
+    max-width: 480px;
+  }
+}
+@media (max-width: 576px) {
+  .cont {
+    max-width: 400px;
+  }
+}
+@media (max-width: 412px) {
+  .cont {
+    max-width: 300px;
+  }
+}
+@media (max-width: 376px) {
+  .cont {
+    max-width: 250px;
+  }
+}
 body {
   background-color: #EEEEEE;
 }
@@ -1075,7 +1116,7 @@ footer .footer__image_container .footer__image {
     display: none;
   }
 }
-@media (max-width: 767.98px) {
+@media (max-width: 835px) {
   .__container {
     max-width: 480px;
   }

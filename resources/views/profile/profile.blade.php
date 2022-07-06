@@ -15,7 +15,7 @@
         </div> 
         <div class="profile__data_container">
             <div class="profile__personal_data">
-                <div class="profile__personal_data_block block">
+                <div class="profile__personal_data_block block cont">
                     <p class="normal_text fisrt_child">Личные данные</p>
                     <p class="normal_text">
                         Name:
@@ -68,35 +68,35 @@
                 </div>
                 <div class="profile__personal_data_btns">
                     <form action="{{ route('profile.edit') }}">
-                        <button type="submit" class="profile__update_btn profile__btn">
+                        <button type="submit" class="profile__update_btn profile__btn cont">
                             <p class="normal_plus_text">ОБНОВИТЬ ДАННЫЕ</p>
                         </button>
                     </form>
                     <form action="{{ route('logout') }}">
-                        <button type="submit" class="profile__exit_btn profile__btn">
+                        <button type="submit" class="profile__exit_btn profile__btn cont">
                             <p class="normal_plus_text">ВЫЙТИ ИЗ АККАУНТА</p>
                         </button>
                     </form>
                 </div>
             </div>
             <div class="profile__statistic_data">
-                <div class="profile__body_block block">
+                <div class="profile__body_block block cont">
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
                     <p class="normal_text">Параметры тела</p>
                     <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
                 </div>
-                <div class="profile__body_block block">
+                <div class="profile__body_block block cont">
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
                     <p class="normal_text">Статистика</p>
                     <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
                 </div>
-                <div class="profile__body_block block">
+                <div class="profile__body_block block cont">
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="block_image">
                     <p class="normal_text">Избранное</p>
                     <img src="{{ asset('\resources\img\right.svg') }}" alt="" class="block_image">
                 </div>
-                <div class="profile__succes_block block">
-                    <p class="normal_text fisrt_child">Личные данные</p>
+                <div class="profile__succes_block block cont">
+                    <p class="normal_text fisrt_child">Ваши успехи</p>
                     <div class="calories__success_wall"></div>
                 </div>
             </div>

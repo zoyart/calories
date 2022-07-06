@@ -1,4 +1,5 @@
 @import "../variables.scss";
+$blockContainer: (1200px / 2 - 10px);
 
 .block {
     border-radius: 10px;
@@ -35,7 +36,7 @@
     max-height: 710px;
 }
 .profile__personal_data_block {
-    width: 650px;
+    width: $blockContainer;
     height: 526px;
     max-height: 526px;
     .fisrt_child {
@@ -47,7 +48,7 @@
     flex-direction: column;
     gap: 20px;
     .profile__btn {
-        width: 650px;
+        width: $blockContainer;
         height: 75px;
         border-radius: 90px;
         p {
@@ -70,23 +71,66 @@
 .profile__body_block {
     display: flex;
     justify-content: space-between;
-    width: 650px;
+    width: $blockContainer;
     height: 90px;
     padding: 21px 70px 21px 20px;
+
     p {
-        margin: auto 0 auto -250px;
+        margin: auto;
     }
+
 }
 
 
 .profile__succes_block {
-    width: 650px;
+    width: $blockContainer;
     height: 385px;
     text-align: center;
+    padding: 34px 15px;
     .calories__success_wall {
-        width: 539px;
+        max-width: 539px;
         height: 280px;
         background-color: $grey;
         margin: 0 auto;
+    }
+}
+@media (max-width: 1400px) {
+    .cont {
+        max-width: 960px / 2 - 10px;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .cont {
+        max-width: 768px / 2 - 10px;
+    }
+}
+
+ 
+@media (max-width: 835px) {
+    .profile__data_container {
+        flex-direction: column;
+        row-gap: 40px;
+        margin: 0 auto;
+        max-width: 480px;
+    }
+    .cont {
+        max-width: 480px;
+    }
+}
+@media (max-width: 576px) {
+    .cont {
+        max-width: 400px;
+    }
+}
+@media (max-width: 412px) {
+    .cont {
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 376px) {
+    .cont {
+        max-width: 250px;
     }
 }
