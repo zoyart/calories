@@ -56,17 +56,20 @@ Route::group(['middleware' => 'auth'], function () {
         // Взаимодействие с категориями
         Route::get('/categories', [RecipeCategoryController::class, 'index'])->name('admin.categories.index');
         Route::post('/categories', [RecipeCategoryController::class, 'store'])->name('admin.categories.store');
+        Route::get('/categories/edit', [RecipeCategoryController::class, 'edit'])->name('admin.categories.edit');
+        Route::post('/categories/update', [RecipeCategoryController::class, 'update'])->name('admin.categories.update');
         Route::delete('/categories/{id}', [RecipeCategoryController::class, 'destroy'])->name('admin.categories.destroy');
-        Route::delete('/categories/destroy_few', [RecipeCategoryController::class, 'destroyFew'])->name('admin.categories.destroyFew');
-
-        // Авторизация в админке
-        Route::group(['middleware' => 'guest'], function () {
-            Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
-            Route::post('/auth', [AdminController::class, 'auth'])->name('admin.auth');
-        });
-        Route::group(['middleware' => 'auth'], function () {
-            Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
-        });
+        Route::post('/categories/destroy_few', [RecipeCategoryController::class, 'destroyFew'])->name('admin.categories.destroyFew');
     });
 });
 
+// Авторизация в админке
+Route::prefix('/admin')->group(function () {
+    Route::group(['middleware' => 'guest'], function () {
+        Route::get('/login', [AdminController::class, 'login'])->name('admin.login');
+        Route::post('/auth', [AdminController::class, 'auth'])->name('admin.auth');
+    });
+    Route::group(['middleware' => 'auth'], function () {
+        Route::get('/logout', [AdminController::class, 'logout'])->name('admin.logout');
+    });
+});

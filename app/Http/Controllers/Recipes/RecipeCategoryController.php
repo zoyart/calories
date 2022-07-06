@@ -17,7 +17,7 @@ class RecipeCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::where('type', 'recipes')->get();
         $recipesCount = Recipe::all()->count();
         $categoriesCount = Category::all()->count();
 
@@ -68,9 +68,23 @@ class RecipeCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Request $request)
     {
-        //
+        $requestParameters = ($request->request);
+        dd($requestParameters);
+
+        $ids = array();
+
+        foreach ($requestParameters as $key => $value) {
+            if ($key !== '_token') {
+                array_push($ids, $value);
+            }
+        }
+
+        $categories = Category::where('id', 7)->get();
+        dd($categories);
+
+        return view('admin.categories.edit');
     }
 
     /**
@@ -80,9 +94,15 @@ class RecipeCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $category = Category::create([
+            'name' => $request->name,
+            'author' => Auth::user()->name,
+            'type' => 'recipes',
+        ]);
+
+        return response()->json('200');
     }
 
     /**
@@ -102,8 +122,10 @@ class RecipeCategoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroyFew($id)
+    public function destroyFew(Request $request)
     {
+        Category::destroy($request->all());
 
+        return redirect()->route('index');
     }
 }

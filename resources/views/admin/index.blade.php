@@ -28,19 +28,11 @@
                 <a href="" class="link-dark" style="text-decoration: none;">
                     <div class="card" style="margin: 0px 20px 20px 0px;">
                         <div class="card-body text-center">
-                            <h5 class="card-title"></h5>
+                            <h5 class="card-title">0*</h5>
                             <p class="card-text">Employee</p>
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="col">
-                <div class="card" style=" margin: 0px 20px 20px 0px;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">0</h5>
-                        <p class="card-text">Unpublished</p>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

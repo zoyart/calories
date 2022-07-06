@@ -39,7 +39,7 @@ class AdminController extends Controller
             return redirect()->route('admin.index');
         }
 
-        return redirect()->back();
+        return redirect()->route('admin.index');
     }
 
     public function logout()

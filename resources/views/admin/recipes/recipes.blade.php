@@ -37,7 +37,7 @@
                     <div class="card" style=" margin: 0px 20px 20px 0px;">
                         <div class="card-body text-center">
                             <h5 class="card-title">0</h5>
-                            <p class="card-text">Unpublished</p>
+                            <p class="card-text">Unpublished recipes</p>
                         </div>
                     </div>
                 </div>

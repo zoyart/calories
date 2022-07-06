@@ -16,7 +16,8 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        return view('recipes.recipes');
+        $recipes = Recipe::all();
+        return view('recipes.recipes', compact('recipes'));
     }
 
     public function adminIndex()
