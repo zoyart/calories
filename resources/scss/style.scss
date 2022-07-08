@@ -1,8 +1,14 @@
+.__container {
+    margin: 0 auto;
+    padding: 86px 0;
+}
+
 // Imports
 @import "nullstyle.scss";
 @import "./pages/calories.scss";
 @import "variables.scss";
 @import "./pages/profile.scss";
+@import "./pages/recipes.scss";
 
 body {
     // background-image: linear-gradient(#A8F3A4, #62E48B);
@@ -42,21 +48,27 @@ hr {
     justify-content: space-between;
     height: 90px;
     margin: 0 auto;
+
     .header__logo_container {
+        width: 90px;
         margin: auto 0;
         display: flex;
+
         a {
             max-width: 100%;
         }
-        
+
     }
+
     .header__logo {
         margin: auto 0;
         width: 48px;
         height: 48px;
     }
+
     .header__nav_container {
         margin: auto;
+
         .nav__wrapper {
             margin: auto;
             display: flex;
@@ -75,8 +87,12 @@ hr {
 
     .header__login_container {
         margin: auto 0 auto 0;
-        
-        max-width: 90px;
+
+        .login_profile_wrapper {
+            display: flex;
+            width: 90px;
+            justify-content: right;
+        }
 
         .login_button_wrapper {
             display: flex;
@@ -204,6 +220,7 @@ hr {
     background-color: #ECEFF1;
     box-shadow: 1px 0px 6px rgba(0, 0, 0, .2);
     transition-duration: .25s;
+
     .menu__item {
         text-align: center;
     }
@@ -218,12 +235,10 @@ hr {
         max-height: 30px;
     }
 }
+
 .hamburger-menu {
     display: none;
 }
-@media (max-width: 1199.98px) {}
-
-@media (max-width: 991.98px) {}
 
 @media (max-width: 767.98px) {
     .header__logo_container {
@@ -244,27 +259,31 @@ hr {
             display: none;
         }
     }
+
     .header__logo {
         display: none;
 
     }
+
     .burger__logo {
         display: block;
-        
+
     }
+
     .menu__btn {
         display: flex;
     }
+
     .hamburger-menu {
         display: block;
     }
+
     .header__login_container {
         position: absolute;
         right: 30px;
         top: 15px;
     }
 }
-
 
 ///////////////////Footer//////////////////////////
 footer {
@@ -317,38 +336,41 @@ footer {
 
             .footer__text {
                 color: $green;
+                text-align: center;
+                margin: 0 auto;
             }
         }
     }
 
     .footer__image_container {
+        display: flex;
+        justify-content: right;
         max-width: 42.5%;
         margin: auto 0;
+        width: 308.617px;
 
         .footer__image {
             width: 228px;
             max-height: 228px;
-            border: none;
-            outline: none;
         }
     }
 }
 
 @media (min-width: 1400px) {
     .__container {
-        max-width: 1200px;
+        max-width: $xl;
     }
 }
 
 @media (max-width: 1399.98px) {
     .__container {
-        max-width: 960px;
+        max-width: $lg;
     }
 }
 
 @media (max-width: 1199.98px) {
     .__container {
-        max-width: 768px;
+        max-width: $md;
     }
 }
 
@@ -373,7 +395,7 @@ footer {
 
 @media (max-width: 575.98px) {
     .__container {
-        max-width: 400px;
+        max-width: $vsm;
     }
 
     .social_container {
@@ -385,7 +407,7 @@ footer {
 @media (max-width: 375px) {
 
     .__container {
-        max-width: 300px;
+        max-width: $xs;
     }
 
 }

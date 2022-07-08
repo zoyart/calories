@@ -41,7 +41,7 @@
                 </a>
             @endif
             @if(\Illuminate\Support\Facades\Auth::check())
-                <a href="{{ route('profile.show') }}">
+                <a href="{{ route('profile.show') }}" class="login_profile_wrapper">
                     <img src="{{ asset('\resources\img\profile.png') }}" alt="" class="header__logo">
                 </a>
             @endif
