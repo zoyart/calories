@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Route;
 use \App\Http\Controllers\Admin\AdminController;
 use \App\Http\Controllers\Recipes\RecipeCategoryController;
 use \App\Http\Controllers\Admin\EmployeeController;
-
+use App\Http\Controllers\Progress\ProgressController;
 
 // General page
 Route::view('/', 'index')->name('index');
@@ -44,6 +44,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/recipes/{recipeId}', [RecipeController::class, 'show'])->name('recipes.show');
 
     // Progress
+    Route::get('/progress', [ProgressController::class, 'index'])->name('progress.index');
 
 
     // Маршрутизация для админки

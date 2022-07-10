@@ -217,6 +217,7 @@
 
 
 
+    @foreach($recipes as $recipe)
         <div class="card" style="width: 18rem;">
             <img src="..." class="card-img-top" alt="...">
             <div class="card-body">
@@ -232,4 +233,5 @@
                 <a href="#" class="btn btn-primary">More</a>
             </div>
         </div>
+    @endforeach
 @endsection
