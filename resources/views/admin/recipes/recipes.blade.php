@@ -6,7 +6,7 @@
 
 
 @section('content')
-    <div class="content m-5 w-100">
+    <div class="content w-100">
         <div class="row mb-3 fs-2">
             <div class="col">
                 Recipes
@@ -32,14 +32,6 @@
                         </div>
                     </div>
                 </a>
-            </div>
-            <div class="col">
-                <div class="card" style=" margin: 0px 20px 20px 0px;">
-                    <div class="card-body text-center">
-                        <h5 class="card-title">0</h5>
-                        <p class="card-text">Unpublished recipes</p>
-                    </div>
-                </div>
             </div>
         </div>
         <div class="row mb-4">
@@ -68,6 +60,7 @@
                         </th>
                         <th scope="col">Name</th>
                         <th scope="col">Category</th>
+                        <th scope="col">Male</th>
                         <th scope="col">Published</th>
                         <th scope="col">Author</th>
                         <th scope="col">Created at</th>
@@ -90,7 +83,8 @@
                                     {{ $category['name'] }}
                                 @endforeach
                             </td>
-                            <td> {{ ($recipe->is_published == 1) ? 'Да' : 'Нет' }}</td>
+                            <td> {{ $recipe->male }}</td>
+                            <td> {{ ($recipe->is_published == 1) ? 'Yes' : 'No' }}</td>
                             <td>{{ $recipe->author }}</td>
                             <td>{{ $recipe->created_at }}</td>
                             <td>{{ $recipe->updated_at }}</td>

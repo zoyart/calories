@@ -20,39 +20,22 @@
             <div class="recipes__list_text">
                 <p class="normal_plus_text">НОВЫЕ</p>
                 <div class="recipes__text_wrapper">
-                    <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    <a href=" {{ route('recipes.more', ['type' => 'new']) }}">
+                        <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    </a>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
             </div>
             <div class="recipes__list">
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
+                @foreach($newRecipes as $newRecipe)
+                    <div class="recipes__list_item">
+                        <img src="{{ asset('public/storage/' . $newRecipe->preview) }}" alt="">
+                        <div class="list_item_text__wrapper">
+                            <p class="normal_text">{{ $newRecipe->name }}</p>
+                            <p class="normal_text">{{ $newRecipe->calories}} kcal</p>
+                        </div>
                     </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="recipes__list_container">
@@ -64,34 +47,15 @@
                 </div>
             </div>
             <div class="recipes__list">
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
+                @foreach($breakfastRecipes as $breakfastRecipe)
+                    <div class="recipes__list_item">
+                        <img src="{{ asset('public/storage/' . $breakfastRecipe->preview) }}" alt="">
+                        <div class="list_item_text__wrapper">
+                            <p class="normal_text">{{ $breakfastRecipe->name }}</p>
+                            <p class="normal_text">{{ $breakfastRecipe->calories }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="recipes__list_container">
@@ -103,34 +67,15 @@
                 </div>
             </div>
             <div class="recipes__list">
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
+                @foreach($brunchRecipes as $brunchRecipe)
+                    <div class="recipes__list_item">
+                        <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
+                        <div class="list_item_text__wrapper">
+                            <p class="normal_text">{{ $brunchRecipe->name }}</p>
+                            <p class="normal_text">{{ $brunchRecipe->calories }}</p>
+                        </div>
                     </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="recipes__list_container">
@@ -142,34 +87,15 @@
                 </div>
             </div>
             <div class="recipes__list">
+                @foreach($lunchRecipes as $lunchRecipe)
                 <div class="recipes__list_item">
                     <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
                     <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
+                        <p class="normal_text">{{ $lunchRecipe->name }}</p>
+                        <p class="normal_text">{{ $lunchRecipe->calories }}</p>
                     </div>
                 </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
         <div class="recipes__list_container">
@@ -181,57 +107,17 @@
                 </div>
             </div>
             <div class="recipes__list">
+                @foreach($dinnerRecipes as $dinnerRecipe)
                 <div class="recipes__list_item">
                     <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
                     <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
+                        <p class="normal_text">{{ $dinnerRecipe->name }}</p>
+                        <p class="normal_text">{{ $dinnerRecipe->calories }}</p>
                     </div>
                 </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">Бананово-ежевичный смузи</p>
-                        <p class="normal_text">250 ККАЛ</p>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
-
     </div>
-
-
-
-
-    @foreach($recipes as $recipe)
-        <div class="card" style="width: 18rem;">
-            <img src="..." class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">
-                    {{ Str::limit($recipe->name, 20, '...') }}
-                </h5>
-                <h5 class="card-title">
-
-                </h5>
-                <p class="card-text">
-                    {{ Str::limit($recipe->description, 60, '...') }}
-                </p>
-                <a href="#" class="btn btn-primary">More</a>
-            </div>
-        </div>
-    @endforeach
 @endsection

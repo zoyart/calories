@@ -6,13 +6,13 @@
 
 
 @section('content')
-    <div class="content m-5 w-100">
+    <div class="content w-100">
         <div class="row mb-3 fs-2">
             <div class="col">
                 Create recipe
             </div>
         </div>
-        <form method="post" action="{{ route('admin.recipes.store') }}" id="create">
+        <form method="post" action="{{ route('admin.recipes.store') }}" id="create" enctype="multipart/form-data">
             @csrf
             <div class="row mb-5">
                 <div class="col-8">
@@ -24,7 +24,7 @@
                     <div class="mb-3">
                         <label for="category" class="form-label">Category</label>
                         <select class="form-select" aria-label="Category" name="category_id" id="category">
-                            <option value="Uncategorized" selected>Uncategorized</option>
+                            <option value="uncategorized" selected>Uncategorized</option>
                             @foreach($categories as $category)
                                 <option value="{{$category['id']}}">{{$category['name']}}</option>
                             @endforeach
@@ -33,18 +33,27 @@
                 </div>
                 <div class="col-4">
                     <div class="mb-3">
-                        <label for="calories" class="form-label">Calories</label>
-                        <input class="form-control" type="number" placeholder="Сalories" aria-label="name"
-                               name="calories" id="calories">
+                        <label for="cooking_time" class="form-label">Cooking time</label>
+                        <input class="form-control" type="number" placeholder="In minutes" aria-label="cooking_time"
+                               name="cooking_time" id="cooking_time">
                     </div>
                     <div class="mb-3">
-                        <label for="cooking_time" class="form-label">Cooking time in minutes</label>
-                        <input class="form-control" type="number" placeholder="Cooking time" aria-label="cooking_time"
-                               name="cooking_time" id="cooking_time">
+                        <label for="male" class="form-label">Male</label>
+                        <select class="form-select" aria-label="male" name="male" id="male">
+                            <option value="breakfast" selected>Breakfast</option>
+                            <option value="brunch">Brunch</option>
+                            <option value="dinner">Dinner</option>
+                            <option value="lunch">Lunch</option>
+                        </select>
                     </div>
                 </div>
             </div>
             <div class="row mb-5">
+                <div class="col">
+                    <label for="calories" class="form-label">Calories</label>
+                    <input class="form-control" type="number" placeholder="Сalories" aria-label="name"
+                           name="calories" id="calories">
+                </div>
                 <div class="col">
                     <label for="protein" class="form-label">Protein</label>
                     <input class="form-control" type="number" placeholder="Per 100 grams" aria-label="protein"
@@ -68,7 +77,13 @@
                               name="description"></textarea>
                 </div>
             </div>
-            <div class="d-flex">
+            <div class="row mb-3">
+                <div class="col">
+                    <label for="preview" class="form-label">Preview</label>
+                    <input class="form-control" type="file" id="preview" name="preview">
+                </div>
+            </div>
+            <div class="d-flex my-4">
                 <button type="submit" class="btn btn-outline-success">Create</button>
                 <div class="mx-3">
                     <input type="checkbox" class="form-check-input" id="save_as_draft" name="save_as_draft">

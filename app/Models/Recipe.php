@@ -20,7 +20,8 @@ class Recipe extends Model
         'fats',
         'cooking_time',
         'is_published',
-        'male'
+        'male',
+        'preview',
     ];
 
     public function categories()
