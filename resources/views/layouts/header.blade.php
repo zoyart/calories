@@ -9,7 +9,7 @@
             <div class="nav__wrapper">
                 <a href="{{ route('calories.index') }}" class="normal_text header__text">Calories</a>
                 <a href="{{ route('recipes.index') }}" class="normal_text header__text">Recipes</a>
-                <a href="#" class="normal_text header__text">Progress</a>
+                <a href="{{ route('progress.index') }}" class="normal_text header__text">Progress</a>
             </div>
         </nav>
         <div class="hamburger-menu">
@@ -26,9 +26,9 @@
                 @if(\Illuminate\Support\Facades\Auth::check())
                     <a href="{{ route('profile.show') }}" class="big_text header__text menu__item">Profile</a>
                 @endif
-                <a href="#" class="big_text header__text menu__item">Calories</a>
-                <a href="#" class="big_text header__text menu__item">Recipes</a>
-                <a href="#" class="big_text header__text menu__item">Progress</a>
+                <a href="{{ route('calories.index') }}" class="big_text header__text menu__item">Calories</a>
+                <a href="{{ route('recipes.index') }}" class="big_text header__text menu__item">Recipes</a>
+                <a href="{{ route('progress.index') }}" class="big_text header__text menu__item">Progress</a>
             </ul>
 
         </div>
