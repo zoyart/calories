@@ -78,7 +78,7 @@ class UserController extends Controller
             return redirect()->route('calories.index');
         }
 
-        return redirect()->route('login.form');
+        return redirect()->route('calories.index');
     }
 
     public function logout() {

@@ -7,9 +7,15 @@
         </div>
         <nav class="header__nav_container">
             <div class="nav__wrapper">
-                <a href="{{ route('calories.index') }}" class="normal_text header__text">Calories</a>
-                <a href="{{ route('recipes.index') }}" class="normal_text header__text">Recipes</a>
-                <a href="#" class="normal_text header__text">Progress</a>
+
+                @if(\Illuminate\Support\Facades\Auth::check())
+                    <a href="{{ route('calories.index') }}" class="normal_text header__text">Calories</a>
+                    <a href="{{ route('recipes.index') }}" class="normal_text header__text">Recipes</a>
+                    <a href="#" class="normal_text header__text">Progress</a>
+                @else
+                    <a href="{{ route('index') }}" class="normal_text header__text">General</a>
+                    <a href="#" class="normal_text header__text">Contact</a>
+                @endif
             </div>
         </nav>
         <div class="hamburger-menu">
@@ -32,7 +38,7 @@
             </ul>
 
         </div>
-        
+
 
         <div class="header__login_container">
             @if(!\Illuminate\Support\Facades\Auth::check())

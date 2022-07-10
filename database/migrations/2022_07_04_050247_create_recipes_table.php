@@ -22,7 +22,7 @@ class CreateRecipesTable extends Migration
             $table->integer('protein')->nullable(true);
             $table->integer('fats')->nullable(true);
             $table->integer('cooking_time')->nullable(true);
-            $table->integer('category_id')->nullable(true);
+            $table->string('category', 255)->nullable(true);
             $table->text('description')->nullable(true);
             $table->boolean('is_published');
             $table->timestamps();

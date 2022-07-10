@@ -57,10 +57,6 @@
                             <button type="button" class="btn btn-outline-danger me-2"
                                     data-bs-toggle="modal" data-bs-target="#delete_category">Delete
                             </button>
-                            <form method="get" action="{{ route('admin.categories.edit') }}">
-                                @csrf
-                                <button type="submit" class="btn btn-outline-secondary">Edit</button>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -206,7 +202,7 @@
                         checkboxes_array.push($(element).attr('name'));
                     }
                 });
-                // Токен
+                // Обязательный токен для запроса
                 const token = $('meta[name=_token]').attr('content');
                 // Запрос
                 const response = await fetch(url, {

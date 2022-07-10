@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Recipe;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RecipeController extends Controller
 {
@@ -16,15 +17,16 @@ class RecipeController extends Controller
      */
     public function index()
     {
-        $recipes = Recipe::all();
+        $recipes = Recipe::where('is_published', 1)->get();
+
         return view('recipes.recipes', compact('recipes'));
     }
 
     public function adminIndex()
     {
-        $recipesCount = Recipe::all()->count();
+        $recipesCount = Recipe::where('is_published', 1)->count();
         $categoriesCount = Category::all()->count();
-        $recipes = Recipe::all();
+        $recipes = Recipe::orderBy('is_published', 'desc')->get();
 
         return view('admin.recipes.recipes', compact('recipesCount', 'recipes', 'categoriesCount'));
     }
@@ -54,7 +56,21 @@ class RecipeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $recipe = Recipe::create([
+            'name' => $request->name,
+            'author' => Auth::user()->name,
+            'calories' => $request->calories,
+            'cooking_time' => $request->cooking_time,
+            'protein' => $request->protein,
+            'fats' => $request->fats,
+            'carbohydrates' => $request->carbohydrates,
+            'description' => $request->description,
+            'is_published' => ($request->save_as_draft == 'on') ? 0 : 1,
+        ]);
+
+        $recipe->categories()->attach($request->category_id);
+
+        return redirect()->route('admin.recipes.index');
     }
 
     /**

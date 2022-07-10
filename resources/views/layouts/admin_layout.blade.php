@@ -10,7 +10,7 @@
     <style>
         html, body {
             margin: 0;
-            height: 100%;
+            min-height: 100%;
         }
     </style>
     <title>
@@ -20,11 +20,11 @@
           integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="">
 
-<div class="panel d-flex flex-row">
-    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark min-h-100 vh-100" style="width: 360px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+<div class="panel d-flex flex-row h-100" >
+    <div class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 360px;">
+        <a href="{{ route('calories.index') }}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
             <span class="fs-4">Calories</span>
         </a>
         <hr>

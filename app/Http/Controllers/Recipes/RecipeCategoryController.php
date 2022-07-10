@@ -18,8 +18,9 @@ class RecipeCategoryController extends Controller
     public function index()
     {
         $categories = Category::where('type', 'recipes')->get();
-        $recipesCount = Recipe::all()->count();
+        $recipesCount = Recipe::where('is_published', 1)->count();
         $categoriesCount = Category::all()->count();
+        $unpublishedCount = Category::all()->count();
 
         return view('admin.categories.categories', compact('categories', 'recipesCount', 'categoriesCount'));
     }

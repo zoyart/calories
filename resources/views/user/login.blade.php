@@ -22,7 +22,6 @@
                 <label class="form-check-label" for="remember_me">Check me out</label>
             </div>
             <button type="submit" class="btn btn-outline-primary">Login</button>
-            Check: {{ \Illuminate\Support\Facades\Auth::check() }}
         </form>
     </div>
 

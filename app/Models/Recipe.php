@@ -11,7 +11,7 @@ class Recipe extends Model
 
     protected $fillable = [
         'name',
-        'category_id',
+        'category',
         'description',
         'author',
         'calories',
@@ -20,6 +20,7 @@ class Recipe extends Model
         'fats',
         'cooking_time',
         'is_published',
+        'male'
     ];
 
     public function categories()
