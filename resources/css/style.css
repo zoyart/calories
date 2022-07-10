@@ -889,9 +889,7 @@ input:focus:-ms-input-placeholder {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 1200px;
   margin: 0 auto;
-  gap: 48px;
 }
 
 .search_panel {
@@ -903,6 +901,7 @@ input:focus:-ms-input-placeholder {
 }
 
 .search_panel__btn {
+  min-width: 90px;
   width: 12.5%;
   height: 47px;
   background-color: #41CD8C;
@@ -975,7 +974,8 @@ input:focus:-ms-input-placeholder {
   border-radius: 10px;
 }
 .recipes__list_item img {
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
   height: 130px;
   width: 100%;
 }
@@ -992,6 +992,98 @@ input:focus:-ms-input-placeholder {
   font-size: 16px;
 }
 
+@media (min-width: 1400px) {
+  .search_panel__wrapper {
+    max-width: 1200px;
+  }
+
+  .search_panel__wrapper {
+    gap: 40px;
+  }
+}
+@media (max-width: 1399.98px) {
+  .search_panel__wrapper {
+    max-width: 992px;
+  }
+}
+@media (max-width: 1199.98px) {
+  .search_panel__wrapper {
+    max-width: 768px;
+  }
+}
+@media (max-width: 835px) {
+  .search_panel__wrapper {
+    max-width: 480px;
+  }
+
+  .recipes__list {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+
+  .recipes__list_item {
+    max-width: 223px;
+  }
+}
+@media (max-width: 575.98px) {
+  .page_title {
+    text-align: center;
+  }
+
+  .search_panel__container {
+    height: 170px;
+  }
+
+  .search_panel__wrapper {
+    max-width: 400px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+  .search_panel__wrapper * {
+    margin: 0 auto;
+  }
+  .search_panel__wrapper button {
+    width: 155px;
+  }
+
+  .search_panel__wrapper {
+    gap: 20px;
+  }
+
+  .recipes__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .recipes__list_item {
+    min-width: 400px;
+    min-height: 250px;
+  }
+  .recipes__list_item img {
+    min-height: 200px;
+  }
+}
+@media (max-width: 420px) {
+  .recipes__text_wrapper {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+
+  .search_panel__wrapper {
+    max-width: 300px;
+  }
+
+  .recipes__list_item {
+    min-width: 300px;
+  }
+}
 body {
   background-color: #EEEEEE;
 }
