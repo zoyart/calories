@@ -71,19 +71,6 @@ class RecipeCategoryController extends Controller
      */
     public function edit(Request $request)
     {
-        $requestParameters = ($request->request);
-        dd($requestParameters);
-
-        $ids = array();
-
-        foreach ($requestParameters as $key => $value) {
-            if ($key !== '_token') {
-                array_push($ids, $value);
-            }
-        }
-
-        $categories = Category::where('id', 7)->get();
-        dd($categories);
 
         return view('admin.categories.edit');
     }

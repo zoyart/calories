@@ -48,7 +48,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/progress', [ProgressController::class, 'index'])->name('progress.index');
 
 
-    // Маршрутизация для админки
+    // Маршрутизация для панели администратора
     Route::prefix('/admin')->group(function () {
         // Главная страница админ панели
         Route::get('/', [AdminController::class, 'index'])->name('admin.index');
@@ -57,6 +57,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('/recipes', [RecipeController::class, 'adminIndex'])->name('admin.recipes.index');
         Route::get('/recipes/create', [RecipeController::class, 'create'])->name('admin.recipes.create');
         Route::post('/recipes/store', [RecipeController::class, 'store'])->name('admin.recipes.store');
+        Route::post('/recipes/destroy_few', [RecipeController::class, 'destroyFew'])->name('admin.recipes.destroyFew');
 
         // Взаимодействие с категориями
         Route::get('/categories', [RecipeCategoryController::class, 'index'])->name('admin.categories.index');

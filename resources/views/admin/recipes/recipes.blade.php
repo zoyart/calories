@@ -36,9 +36,39 @@
         </div>
         <div class="row mb-4">
             <div class="col">
-                <form action="{{ route('admin.recipes.create') }}" method="get">
-                    <button type="submit" class="btn btn-outline-success">Create recipe</button>
-                </form>
+                <div class="d-flex">
+                    <form action="{{ route('admin.recipes.create') }}" method="get" class="me-3">
+                        <button type="submit" class="btn btn-outline-success">Create recipe</button>
+                    </form>
+                    <div class="collapse" id="delete_items">
+                        <div class=" d-flex">
+                            <button type="button" class="btn btn-outline-danger me-2"
+                                    data-bs-toggle="modal" data-bs-target="#delete_category">Delete
+                            </button>
+                        </div>
+                    </div>
+                    <div class="modal fade" id="delete_category" tabindex="-1" aria-labelledby="exampleModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-sm">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Are you sure you want to delete?</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
+                                        Close
+                                    </button>
+                                    <button form="table_checkbox" type="button" class="btn btn-outline-danger"
+                                            id="btn_delete_categories">
+                                        Delete
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="row mb-4">
@@ -55,7 +85,7 @@
                     <tr>
                         <th scope="col">
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                <input class="form-check-input" type="checkbox" value="" id="select_all">
                             </div>
                         </th>
                         <th scope="col">Name</th>
@@ -72,7 +102,9 @@
                         <tr>
                             <td>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <input class="form-check-input checkbox" type="checkbox"
+                                           value="{{ $recipe['id'] }}"  name="{{ $recipe['id'] }}"
+                                           id="table_checkbox">
                                 </div>
                             </td>
                             <td>
@@ -96,5 +128,64 @@
         </div>
     </div>
 
+@section('scripts')
+    <script>
+        // Показывать/скрывать панель действий с элементами
+        $('.checkbox').click(function () {
+            if ($('#delete_items').hasClass('collapse')) {
+                $('#delete_items').removeClass('collapse');
+            } else {
+                if (!$('.checkbox').is(":checked")) {
+                    $('#delete_items').addClass('collapse');
+                }
+            }
+        });
+        $('#select_all').click(function () {
+            if ($('#delete_items').hasClass('collapse')) {
+                $('#delete_items').removeClass('collapse');
+            } else {
+                if (!$('.checkbox').is(":checked")) {
+                    $('#delete_items').addClass('collapse');
+                }
+            }
+        });
 
+
+        //  Отправка чекбоксов на удаление
+        $('#btn_delete_categories').click(function (){
+            const sendData = async (url) => {
+                // Получение массива отмеченных чекбоксов
+                let checkboxes_array = [];
+                $('#table #table_checkbox').each(function (index, element) {
+                    if ($(element).is(":checked")) {
+                        checkboxes_array.push($(element).attr('name'));
+                    }
+                });
+                // Обязательный токен для запроса
+                const token = $('meta[name=_token]').attr('content');
+                // Запрос
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Accept": "application/json",
+                        "X-Requested-With": "XMLHttpRequest",
+                        "X-CSRF-Token": token,
+                    },
+                    body: JSON.stringify(checkboxes_array),
+                });
+                console.log(JSON.stringify(checkboxes_array));
+
+                if (!response.ok) {
+                    throw new Error('Ошибка запроса или сервера');
+                }
+
+                location.reload();
+                return await response.json();
+            }
+
+            sendData('http://calories/admin/recipes/destroy_few').then((data)=> console.log(data))
+        });
+    </script>
+@endsection
 @endsection
