@@ -93,7 +93,9 @@ hr {
             width: 90px;
             justify-content: right;
         }
-
+        .log_wrapper {
+            margin: 0 auto;
+        }
         .login_button_wrapper {
             display: flex;
             background: $green;
@@ -451,7 +453,9 @@ footer {
         .form {
             margin: 0 auto;
         }
-
+        form {
+            margin: 0 auto;
+        }
         .forgot_text {
             margin-top: 17px;
         }

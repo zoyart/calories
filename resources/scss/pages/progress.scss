@@ -119,9 +119,15 @@
 }
 
 @media (max-width: 1399.98px) {
+    .progress__weight_graph_wrapper {
+        width: 350px;
+    } 
 }
 
 @media (max-width: 1199.98px) {
+    .progress__weight_graph_wrapper {
+        width: 450px;
+    } 
     .progress__blocks {
         flex-direction: column;
         justify-content: center;
@@ -133,6 +139,10 @@
 }
 
 @media (max-width: 991.98px) {
+    .progress__weight_graph_wrapper {
+        width: 450px;
+        height: 316px;
+    } 
 }
 
 @media (max-width: 835px) {

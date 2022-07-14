@@ -157,6 +157,13 @@ input:focus:-ms-input-placeholder {
   font-size: 36px;
 }
 
+.very_big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: regular;
+  color: black;
+  font-size: 42px;
+}
+
 .link_text {
   color: black;
 }
@@ -520,6 +527,13 @@ input:focus:-ms-input-placeholder {
   font-size: 36px;
 }
 
+.very_big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: regular;
+  color: black;
+  font-size: 42px;
+}
+
 .link_text {
   color: black;
 }
@@ -643,6 +657,13 @@ input:focus:-ms-input-placeholder {
   font-weight: regular;
   color: black;
   font-size: 36px;
+}
+
+.very_big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: regular;
+  color: black;
+  font-size: 42px;
 }
 
 .link_text {
@@ -938,6 +959,13 @@ input:focus:-ms-input-placeholder {
   font-weight: regular;
   color: black;
   font-size: 36px;
+}
+
+.very_big_text {
+  font-family: "Roboto", sans-serif;
+  font-weight: regular;
+  color: black;
+  font-size: 42px;
 }
 
 .link_text {
@@ -1384,7 +1412,16 @@ input:focus:-ms-input-placeholder {
   margin: 5px auto 0 auto;
 }
 
+@media (max-width: 1399.98px) {
+  .progress__weight_graph_wrapper {
+    width: 350px;
+  }
+}
 @media (max-width: 1199.98px) {
+  .progress__weight_graph_wrapper {
+    width: 450px;
+  }
+
   .progress__blocks {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1396,6 +1433,12 @@ input:focus:-ms-input-placeholder {
   }
   .progress__blocks .progress__series_block, .progress__blocks .progress__weight_block {
     margin: 0 auto;
+  }
+}
+@media (max-width: 991.98px) {
+  .progress__weight_graph_wrapper {
+    width: 450px;
+    height: 316px;
   }
 }
 @media (max-width: 835px) {
@@ -1541,6 +1584,9 @@ hr {
   -webkit-box-pack: right;
       -ms-flex-pack: right;
           justify-content: right;
+}
+.header .header__login_container .log_wrapper {
+  margin: 0 auto;
 }
 .header .header__login_container .login_button_wrapper {
   display: -webkit-box;
@@ -1887,6 +1933,9 @@ footer .footer__image_container .footer__image {
   min-width: 290px;
 }
 .container .form_container .form {
+  margin: 0 auto;
+}
+.container .form_container form {
   margin: 0 auto;
 }
 .container .form_container .forgot_text {
