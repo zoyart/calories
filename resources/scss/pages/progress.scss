@@ -1,0 +1,206 @@
+.progress_page {
+    display: flex;
+    flex-direction: column;
+}
+.page_center_title {
+    margin-top: 10px;
+    margin-bottom: 35px;
+    text-align: center;
+}
+
+// Bar
+.progress__weight_bar_container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    p {
+        margin: auto 0;
+    }
+    margin-bottom: 193px;
+}
+.progress__weight_bar_wrapper {
+    width: 1050px;
+    height: 39px;   
+
+}
+.progress__bar {
+    border-radius: 90px;
+    width: 100%;
+    height: 100%;
+}
+.progress__empty_bar {
+    background-color: $white;
+}
+.progress__fill_bar {
+    background-color: $green;
+    margin-top: -39px;
+    width: 35%;
+}
+
+// Blocks
+.progress__blocks {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+.progress__series_block {
+    width: $xl / 2 - 10px;
+    height: 192px;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    
+}
+.progress__series_first_block {
+    display: flex;
+    width: 100%;
+    border-bottom: 2px solid $grey;
+    height: 50%;
+    p {
+        margin: auto;
+    }
+}
+.progress__series_last_block {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 50%;
+    .progress__series_first_section {
+        border-right: 2px solid $grey;
+    }
+    .progress__series_section {
+        display: flex;
+        justify-content: center;
+        width: 50%;
+    }
+}
+.progress__series_text_wrapper {
+    display: flex;
+    max-height: 75px;
+    flex-direction: column;
+    line-height:0ch;
+    margin: auto 0;
+}
+
+
+
+.progress__weight_block {
+    width: $xl / 2 - 10px;
+    height: 456px;
+}
+.progress__weight_wrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.progress__weight_text_wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 316px;
+}
+.progress__weight_graph_wrapper {
+    width: 450px;
+    height: 316px;
+    background-color: $grey;
+    align-self: center;
+}
+.progress__weight_text_down_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 450px;
+    margin: 5px auto 0 auto;
+}
+
+@media (min-width: 1400px) {
+    
+}
+
+@media (max-width: 1399.98px) {
+    .progress__weight_graph_wrapper {
+        width: 350px;
+    } 
+}
+
+@media (max-width: 1199.98px) {
+    .progress__weight_graph_wrapper {
+        width: 450px;
+    } 
+    .progress__blocks {
+        flex-direction: column;
+        justify-content: center;
+        .progress__series_block, .progress__weight_block {
+            margin: 0 auto;
+        }
+
+    }
+}
+
+@media (max-width: 991.98px) {
+    .progress__weight_graph_wrapper {
+        width: 450px;
+        height: 316px;
+    } 
+}
+
+@media (max-width: 835px) {
+    .progress__series_first_block {
+        max-height: 80px;
+    }
+    .progress__series_block {
+        width: 480px;
+        height: 255px;
+        .progress__series_last_block {
+            display: flex;
+            flex-direction: column;
+            .progress__series_section {
+                width: 100%;
+                max-height: 80px;
+            }
+            .progress__series_first_section {
+                border-bottom: 2px solid $grey;
+            }
+        }
+        .progress__series_text_wrapper {
+            margin-top: 10px;
+        }
+
+    }
+    .progress__weight_block {
+        width: 480px;
+        padding-top: 0;
+        padding-bottom: 0;
+        .progress__weight_graph_wrapper {
+            width: 350px;
+            height: 300px;
+        } 
+    }
+}
+
+@media (max-width: 575.98px) {
+    .progress__series_block, .progress__weight_block {
+        width: $vsm;
+    }
+    .progress__weight_graph_wrapper {
+        max-width: 270px;
+        height: 300px;
+    } 
+    .progress__weight_text_down_wrapper {
+        max-width: 270px;
+    }
+    
+}
+
+@media (max-width: 440px) {
+    .progress__series_block, .progress__weight_block {
+        width: $xs;
+    }
+    .progress__weight_graph_wrapper, .progress__weight_wrapperprogress__weight_wrapper {
+        max-width: 170px;
+        
+    } 
+    
+
+}

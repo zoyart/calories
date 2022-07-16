@@ -18,10 +18,10 @@
         </div>
         <div class="recipes__list_container">
             <div class="recipes__list_text">
-                <p class="normal_plus_text">НОВЫЕ</p>
+                <p class="normal_plus_text">New</p>
                 <div class="recipes__text_wrapper">
                     <a href=" {{ route('recipes.more', ['type' => 'new']) }}">
-                        <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                        <p class="normal_plus_text">All recipes</p>
                     </a>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
@@ -40,9 +40,9 @@
         </div>
         <div class="recipes__list_container">
             <div class="recipes__list_text">
-                <p class="normal_plus_text">ЗАВТРАК</p>
+                <p class="normal_plus_text">BREAKFAST</p>
                 <div class="recipes__text_wrapper">
-                    <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    <p class="normal_plus_text">All recipes</p>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
             </div>
@@ -60,9 +60,9 @@
         </div>
         <div class="recipes__list_container">
             <div class="recipes__list_text">
-                <p class="normal_plus_text">ОБЕД</p>
+                <p class="normal_plus_text">DINNER</p>
                 <div class="recipes__text_wrapper">
-                    <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    <p class="normal_plus_text">All recipes</p>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
             </div>
@@ -80,9 +80,9 @@
         </div>
         <div class="recipes__list_container">
             <div class="recipes__list_text">
-                <p class="normal_plus_text">ЛАНЧ</p>
+                <p class="normal_plus_text">LUNCH</p>
                 <div class="recipes__text_wrapper">
-                    <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    <p class="normal_plus_text">All recipes</p>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
             </div>
@@ -100,9 +100,9 @@
         </div>
         <div class="recipes__list_container">
             <div class="recipes__list_text">
-                <p class="normal_plus_text">УЖИН</p>
+                <p class="normal_plus_text">DINNER</p>
                 <div class="recipes__text_wrapper">
-                    <p class="normal_plus_text">ВСЕ РЕЦЕПТЫ</p>
+                    <p class="normal_plus_text">All recipes</p>
                     <img src="{{ asset('\resources\img\right_green.svg') }}" alt="">
                 </div>
             </div>

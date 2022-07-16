@@ -103,7 +103,12 @@ input:focus:-ms-input-placeholder {
     color: black;
     font-size: 36px;
 }
-
+.very_big_text {
+    font-family: $ff-roboto;
+    font-weight: regular;
+    color: black;
+    font-size: 42px;
+}
 .link_text {
     color: black;
 
@@ -133,4 +138,47 @@ input:focus:-ms-input-placeholder {
         font-size: 30px;
     }
 
+}
+
+
+
+
+
+@media (min-width: 1400px) {
+    .__container {
+        max-width: $xl;
+    }
+}
+
+@media (max-width: 1399.98px) {
+    .__container {
+        max-width: $lg;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .__container {
+        max-width: $md;
+    }
+}
+
+@media (max-width: 991.98px) {
+}
+
+@media (max-width: 835px) {
+    .__container {
+        max-width: 480px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .__container {
+        max-width: $vsm;
+    }
+}
+
+@media (max-width: 375px) {
+    .__container {
+        max-width: $xs;
+    }
 }
