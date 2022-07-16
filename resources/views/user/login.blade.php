@@ -1,11 +1,19 @@
-@extends('layouts.layout')
+<!doctype html>
+<html lang="en">
 
-@section('head-title')
-    Авторизация
-@endsection
-
-
-@section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="_token" content="{{ csrf_token() }}">
+    <title>
+        @yield('head-title')
+    </title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ asset('\resources\css\style.css') }}">
+</head>
+<body>
     <div class="container active">
         <h1 class="very_big_text calories">Calories</h1>
         <div class="form_container">
@@ -27,9 +35,18 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div>
-    
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+            crossorigin="anonymous">
+    </script>
+    <script src="{{ asset('\resources\js\script.js') }}">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+            crossorigin="anonymous">
+    </script>
+</body>
 
-@endsection
 
 {{-- <div class="container">
         <form method="post" action="{{ route('auth') }}">
