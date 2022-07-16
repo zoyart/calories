@@ -21,7 +21,7 @@ class Recipe extends Model
         'cooking_time',
         'is_published',
         'male',
-        'preview',
+        'preview_image',
     ];
 
     public function categories()

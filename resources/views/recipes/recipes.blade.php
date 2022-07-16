@@ -29,7 +29,7 @@
             <div class="recipes__list">
                 @foreach($newRecipes as $newRecipe)
                     <div class="recipes__list_item">
-                        <img src="{{ asset('public/storage/' . $newRecipe->preview) }}" alt="">
+                        <img src="{{ asset('public/storage/' . $newRecipe->preview_image) }}" alt="">
                         <div class="list_item_text__wrapper">
                             <p class="normal_text">{{ $newRecipe->name }}</p>
                             <p class="normal_text">{{ $newRecipe->calories}} kcal</p>
@@ -49,10 +49,10 @@
             <div class="recipes__list">
                 @foreach($breakfastRecipes as $breakfastRecipe)
                     <div class="recipes__list_item">
-                        <img src="{{ asset('public/storage/' . $breakfastRecipe->preview) }}" alt="">
+                        <img src="{{ asset('public/storage/' . $breakfastRecipe->preview_image) }}" alt="">
                         <div class="list_item_text__wrapper">
                             <p class="normal_text">{{ $breakfastRecipe->name }}</p>
-                            <p class="normal_text">{{ $breakfastRecipe->calories }}</p>
+                            <p class="normal_text">{{ $breakfastRecipe->calories }} kcal</p>
                         </div>
                     </div>
                 @endforeach
@@ -69,10 +69,10 @@
             <div class="recipes__list">
                 @foreach($brunchRecipes as $brunchRecipe)
                     <div class="recipes__list_item">
-                        <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
+                        <img src="{{ asset('public/storage/' . $brunchRecipe->preview_image) }}" alt="">
                         <div class="list_item_text__wrapper">
                             <p class="normal_text">{{ $brunchRecipe->name }}</p>
-                            <p class="normal_text">{{ $brunchRecipe->calories }}</p>
+                            <p class="normal_text">{{ $brunchRecipe->calories }} kcal</p>
                         </div>
                     </div>
                 @endforeach

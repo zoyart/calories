@@ -79,8 +79,8 @@
             </div>
             <div class="row mb-3">
                 <div class="col">
-                    <label for="preview" class="form-label">Preview</label>
-                    <input class="form-control" type="file" id="preview" name="preview">
+                    <label for="preview_image" class="form-label">Preview image</label>
+                    <input class="form-control" type="file" id="preview_image" name="preview_image">
                 </div>
             </div>
             <div class="d-flex my-4">

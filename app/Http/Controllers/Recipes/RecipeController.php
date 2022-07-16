@@ -64,17 +64,17 @@ class RecipeController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'preview' => 'image',
+            'preview_image' => 'image',
         ]);
 
         $folder = date('Y-m-d');
-        $preview = $request->file('preview')->store("images/{$folder}", "public");
+        $previewImage = $request->file('preview_image')->store("images/{$folder}", "public");
 
         $recipe = Recipe::create([
             'name' => $request->name,
             'author' => Auth::user()->name,
             'male' => $request->male,
-            'preview' => $preview,
+            'preview_image' => $previewImage,
             'calories' => $request->calories,
             'cooking_time' => $request->cooking_time,
             'protein' => $request->protein,
