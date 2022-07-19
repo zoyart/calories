@@ -11,7 +11,7 @@
         <div class="search_panel__container">
             <div class="search_panel__wrapper">
                 <input type="text" placeholder="Search" class="search_panel normal_text">
-                <button type="button" class="submit_wrapper search_panel__btn">
+                <button type="submit" class="submit_wrapper search_panel__btn">
                     <p class="normal_text submit_text">Search</p>
                 </button>
             </div>
@@ -88,13 +88,13 @@
             </div>
             <div class="recipes__list">
                 @foreach($lunchRecipes as $lunchRecipe)
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">{{ $lunchRecipe->name }}</p>
-                        <p class="normal_text">{{ $lunchRecipe->calories }}</p>
+                    <div class="recipes__list_item">
+                        <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
+                        <div class="list_item_text__wrapper">
+                            <p class="normal_text">{{ $lunchRecipe->name }}</p>
+                            <p class="normal_text">{{ $lunchRecipe->calories }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
@@ -108,13 +108,13 @@
             </div>
             <div class="recipes__list">
                 @foreach($dinnerRecipes as $dinnerRecipe)
-                <div class="recipes__list_item">
-                    <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
-                    <div class="list_item_text__wrapper">
-                        <p class="normal_text">{{ $dinnerRecipe->name }}</p>
-                        <p class="normal_text">{{ $dinnerRecipe->calories }}</p>
+                    <div class="recipes__list_item">
+                        <img src="{{ asset('\resources\img\smuzi.jpg') }}" alt="">
+                        <div class="list_item_text__wrapper">
+                            <p class="normal_text">{{ $dinnerRecipe->name }}</p>
+                            <p class="normal_text">{{ $dinnerRecipe->calories }}</p>
+                        </div>
                     </div>
-                </div>
                 @endforeach
 
             </div>
