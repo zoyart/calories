@@ -161,6 +161,9 @@
     // Запрос на сервер, после получения целевого и текущего веса
     var button = document.querySelector('#btn_section_two');
     button.addEventListener('click', function () {
+        let weight = document.querySelector('#weight').value;
+        let purpose_weight = document.querySelector('#purpose_weight').value;
+
         const sendData = async (url) => {
             // Обязательный токен для запроса
             const token = $('meta[name=_token]').attr('content');
@@ -182,7 +185,7 @@
             return await response.json();
         }
 
-        sendData('http://calories/api/target-date?weight=80&purpose_weight=75').then((data) => {
+        sendData(`http://calories/api/target-date?weight=${weight}&purpose_weight=${purpose_weight}`).then((data) => {
             window.targetDates = { dates: data };
 
             // Переменные для графика
@@ -211,6 +214,8 @@
                 },
                 options: {},
             })
+
+            console.log(window.canvasObj);
         });
     });
 

@@ -26,6 +26,8 @@ class RegistrationController extends Controller
             $difference = $weight - $purpose_weight;
         } elseif ($weight < $purpose_weight) {
             $difference = $purpose_weight - $weight;
+        } elseif ($weight == $purpose_weight) {
+            $difference = 0;
         }
 
         $weightPerWeek = [
