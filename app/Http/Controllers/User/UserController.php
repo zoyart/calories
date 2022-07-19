@@ -20,7 +20,7 @@ class UserController extends Controller
     }
 
     public function store(Request $request) {
-//        dd($request);
+        dd($request);
         $weight = $request->input('weight');
         $growth = $request->input('growth');
         $age = $request->input('age');
