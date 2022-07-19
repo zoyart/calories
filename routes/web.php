@@ -41,7 +41,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Recipes
     Route::get('/recipes', [RecipeController::class, 'index'])->name('recipes.index');
-    Route::get('/recipes/more/{type}', [RecipeController::class, 'more'])->name('recipes.more');
+    Route::get('/recipes/more_{type}', [RecipeController::class, 'more'])->name('recipes.more');
     Route::get('/recipes/{recipeId}', [RecipeController::class, 'show'])->name('recipes.show');
 
     // Progress

@@ -22,47 +22,43 @@
                         {{ $user->name }}
                     </p>
                     <p class="normal_text">
-                        email:
+                        Email:
                         {{ $user->email }}
                     </p>
                     <p class="normal_text">
-                        gender:
+                        Gender:
                         {{ $user->gender }}
                     </p>
                     <p class="normal_text">
-                        purpose:
+                        Purpose:
                         {{ $user->purpose }}
                     </p>
                     <p class="normal_text">
-                        workout:
+                        Workout:
                         {{ $user->workout }}
                     </p>
                     <p class="normal_text">
-                        pace:
+                        Pace:
                         {{ $user->pace }}
                     </p>
                     <p class="normal_text">
-                        weight:
+                        Weight:
                         {{ $user->weight }}
                     </p>
                     <p class="normal_text">
-                        purpose_weight:
+                        Purpose weight:
                         {{ $user->purpose_weight }}
                     </p>
                     <p class="normal_text">
-                        growth:
+                        Growth:
                         {{ $user->growth }}
                     </p>
                     <p class="normal_text">
-                        age:
+                        Age:
                         {{ $user->age }}
                     </p>
                     <p class="normal_text">
-                        calories_per_day:
-                        {{ $user->calories_per_day }}
-                    </p>
-                    <p class="normal_text">
-                        created_at:
+                        Account created:
                         {{ $user->created_at }}
                     </p>
                 </div>

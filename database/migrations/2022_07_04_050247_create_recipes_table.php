@@ -23,7 +23,7 @@ class CreateRecipesTable extends Migration
             $table->integer('fats')->nullable(true);
             $table->integer('cooking_time')->nullable(true);
             $table->string('male', 255)->nullable(true);
-            $table->string('preview')->nullable(true);
+            $table->string('preview_image')->nullable(true);
             $table->text('description')->nullable(true);
             $table->boolean('is_published');
             $table->timestamps();

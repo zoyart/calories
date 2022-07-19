@@ -3,26 +3,29 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use http\Env\Response;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class RegistrationController extends Controller
 {
     public function targetDate(Request $request) {
-        $request->validate([
+        $validator = Validator::make($request->all(), [
             'weight' => 'required|max:512|numeric',
             'purpose_weight' => 'required|max:512|numeric',
-            'purpose' => 'required|max:512',
         ]);
+
+        if ($validator->fails()) {
+            return response()->json($validator->errors(), 400);
+        }
 
         $weight = (float) $request->weight;
         $purpose_weight = (float) $request->purpose_weight;
 
-        if ($request->purpose === 'down' and $weight > $purpose_weight) {
+        if ($weight > $purpose_weight) {
             $difference = $weight - $purpose_weight;
-        } elseif ($request->purpose === 'up' and $weight < $purpose_weight) {
+        } elseif ($weight < $purpose_weight) {
             $difference = $purpose_weight - $weight;
-        } else {
-            return response()->json('Некорректные данные');
         }
 
         $weightPerWeek = [
@@ -42,6 +45,6 @@ class RegistrationController extends Controller
             $weightPerWeek[$key] = date_format($date, 'j \of F Y');
         }
 
-        return response()->json($weightPerWeek);
+        return response()->json($weightPerWeek, 200);
     }
 }
