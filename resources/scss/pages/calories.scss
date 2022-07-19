@@ -72,7 +72,8 @@
 .eating_time_text__wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 32px 50px 10px 29px;
+    padding: 32px 160px 10px 29px;
+    
 }
 .image_wrapper {
     height: 97px;
@@ -90,6 +91,7 @@
 }
 .eating_buckets_wrapper {
     display: flex;
+    flex-wrap: wrap;
     gap: 10px;
     .bucket_image {
         width: 56px;
@@ -132,16 +134,28 @@
             height: 42px;
         }
     }
+    .eating_time_text__wrapper {
+        padding-right: 600px;
+    }
 } 
+@media (max-width: 1200px) {
+    .eating_time_text__wrapper {
+        padding-right: 400px;
+    }
+}
 @media (max-width: 835px) {
     .calories__menu_block {
         .calories__calories_left {
             margin: -70px 30px 0 30px;
         }
     }
+    .eating_time_text__wrapper {
+        padding-right: 130px;
+    }
 }
 @media (max-width: 630px) {
     .eating_time_text__wrapper {
+        padding: 32px 160px 10px 29px;
         .image_wrapper {
             display: none;
         }
@@ -183,12 +197,12 @@
             height: 28px;
         }
     }
-    .calories__eating_time {
-        position: relative;
-        .plus_button {
-            position: absolute;
-            right: 50px;
-            top: 52px
-        }   
-    }
+}
+.calories__eating_time {
+    position: relative;
+    .plus_button {
+        position: absolute;
+        right: 50px;
+        top: 52px
+    }   
 }

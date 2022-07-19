@@ -139,8 +139,8 @@
                     <img src="" alt="" class="image calories__image">
                 </div>
                 <div class="text__wrapper">
-                    <p class="normal_plus_text">Exercise stress</p>
-                    <p class="normal_text">It is recommended for 30 minutes</p>
+                    <p class="normal_plus_text">Training</p>
+                    <p class="normal_text">Recommended for 30 minutes</p>
                 </div>
                 <a href="" class="plus_button calories__button">
                     <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
@@ -160,10 +160,11 @@
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="bucket_image">
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="bucket_image">
                 </div>
-                <a href="" class="plus_button calories__button">
-                    <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
-                </a>
+                
             </div>
+            <a href="" class="plus_button calories__button">
+                <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">
+            </a>
             <div class="calories__hr_wrapper">
                 <hr>
                 <p class="normal_text">520 ml</p>

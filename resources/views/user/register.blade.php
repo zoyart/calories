@@ -1,124 +1,131 @@
-@extends('layouts.layout')
+
 @section('head-title')
     Регистрация
 @endsection
+<link rel="stylesheet" type="text/css" href="{{ asset('\resources\css\style.css') }}">
 
 
-@section('content')
-    @if($errors)
+@if($errors)
 
-    @endif
-    <form id="main-form" action="{{ route('register.store') }}" method="POST" class="">
-        @csrf
-            <div class="container active">
-                <h1 class="very_big_text calories">Calories</h1>
-                <div class="form_container">
-                    <h2 class="big_text form__text">Choose your gender:</h2>
-                    <div class="form">
-                        <div class="genders">
-                            <div class="man gender_wrapper">
-                                <button type="button" class="gender_button">
-                                    <img src="{{ asset('\resources\img\bussiness-man.png') }}" class="gender_img" alt="Man">
-                                </button>
-                            </div>
-                            <div class="woman gender_wrapper">
-                                <button type="button" class="gender_button">
-                                    <img src="{{ asset('\resources\img\businesswoman.png') }}" class="gender_img" alt="Woman">
-                                </button>
-                            </div>
-                        </div>
-                        <button type="button" class="log_wrapper submit_wrapper">
-                            <p class="bold_text submit_text">CONTINUE</p>
+@endif
+<form id="main-form" action="{{ route('register.store') }}" method="POST" class="container_form">
+    @csrf
+    <div class="container active">
+        <h1 class="very_big_text calories">Calories</h1>
+        <div class="form_container">
+            <h2 class="big_text form__text">Choose your gender:</h2>
+            <div class="form">
+                <div class="genders">
+                    <div class="man gender_wrapper">
+                        <button type="button" class="gender_button">
+                            <img src="{{ asset('\resources\img\bussiness-man.png') }}" class="gender_img" alt="Man">
+                        </button>
+                    </div>
+                    <div class="woman gender_wrapper">
+                        <button type="button" class="gender_button">
+                            <img src="{{ asset('\resources\img\businesswoman.png') }}" class="gender_img" alt="Woman">
                         </button>
                     </div>
                 </div>
+                <button type="button" class="log_wrapper submit_wrapper">
+                    <p class="bold_text submit_text">CONTINUE</p>
+                </button>
             </div>
-            <div class="container hidden">
-                <h1 class="very_big_text calories">Calories</h1>
-                <div class="form_container">
-                    <h2 class="big_text form__text">Enter your data</h2>
-                    <div class="form">
-                        <div class="log_wrapper">
-                            <input type="number" name="age" class="bold_text login log__input" placeholder="Your age">
-                        </div>
-                        <div class="log_wrapper">
-                            <input type="number" name="growth" class="bold_text login log__input" placeholder="Your height">
-                        </div>
-                        <div div class="log_wrapper">
-                            <input type="number" name="weight" class="bold_text log__input" placeholder="Your weight">
-                        </div>
-                        <button type="button" class="log_wrapper submit_wrapper">
-                            <p class="bold_text submit_text">CONTINUE</p>
+        </div>
+    </div>
+    <div class="container hidden">
+        <h1 class="very_big_text calories">Calories</h1>
+        <div class="form_container">
+            <h2 class="big_text form__text">Enter your data</h2>
+            <div class="form">
+                <div class="log_wrapper">
+                    <input type="number" name="age" class="bold_text login log__input" placeholder="Your age">
+                </div>
+                <div class="log_wrapper">
+                    <input type="number" name="growth" class="bold_text login log__input" placeholder="Your height">
+                </div>
+                <div div class="log_wrapper">
+                    <input type="number" name="weight" class="bold_text log__input" placeholder="Your weight">
+                </div>
+                <button type="button" class="log_wrapper submit_wrapper">
+                    <p class="bold_text submit_text">CONTINUE</p>
+                </button>
+            </div>
+            <!-- <p class="normal_text forgot_text"><a href="#" class="link_text">Or login to your account</a></p> -->
+        </div>
+    </div>
+    <div id="activities" class="container hidden">
+        <h1 class="very_big_text calories">Calories</h1>
+        <div class="form_container">
+            <h2 class="big_text form__text">Select the level of daily activity</h2>
+            <div class="form" name="activity">
+                <div class="activities">
+                    <div id="first_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\sleep.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For sedentary people, there are few training or they are absent</p>
                         </button>
                     </div>
-                    <!-- <p class="normal_text forgot_text"><a href="#" class="link_text">Or login to your account</a></p> -->
-                </div>
-            </div>
-            <div id="activities" class="container hidden">
-                <h1 class="very_big_text calories">Calories</h1>
-                <div class="form_container">
-                    <h2 class="big_text form__text">Select the level of daily activity</h2>
-                    <div class="form" name="activity">
-                        <div class="activities">
-                            <div id="first_active-level" class="activities__div">
-                                <button type="button" class="activities__btn">
-                                    <img src="{{ asset('\resources\img\sleep.png') }}" class="activities__img" alt="sleep">
-                                    <p class="normal_text activities__text">For sedentary people, there are few training or they are absent</p>
-                                </button>
-                            </div>
-                            <div id="second_active-level" class="activities__div">
-                                <button type="button" class="activities__btn">
-                                    <img src="{{ asset('\resources\img\sports.png') }}" class="activities__img" alt="sleep">
-                                    <p class="normal_text activities__text">For people with low activity, easy training 1-3 times a week or in the form of a different activity equivalent</p>
-                                </button>
-                            </div>
-                            <div id="three_active-level" class="activities__div">
-                                <button type="button" class="activities__btn">
-                                    <img src="{{ asset('\resources\img\exercise.png') }}" class="activities__img" alt="sleep">
-                                    <p class="normal_text activities__text">For moderately active people: physical work of moderate gravity or regular training 3-5 days a week</p>
-                                </button>
-                            </div>
-                            <div id="fourth_active-level" class="activities__div">
-                                <button type="button" class="activities__btn">
-                                    <img src="{{ asset('\resources\img\girya.png') }}" class="activities__img" alt="sleep">
-                                    <p class="normal_text activities__text">For very active people: physical work is full day or intensive training 6-7 times a week</p>
-                                </button>
-                            </div>
-                            <div id="fifth_active-level" class="activities__div">
-                                <button type="button" class="activities__btn">
-                                    <img src="{{ asset('\resources\img\fire.png') }}" class="activities__img" alt="sleep">
-                                    <p class="normal_text activities__text">For extremely active people: hard physical work and intensive training/playing sports</p>
-                                </button>
-                            </div>
-                        </div>
-                        <input id="activities-value_input" value="none" type="text" class="hidden">
-                        <button type="button" class="log_wrapper submit_wrapper">
-                            <p class="bold_text submit_text">CONTINUE</p>
+                    <div id="second_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\sports.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For people with low activity, easy training 1-3 times a week or in the form of a different activity equivalent</p>
+                        </button>
+                    </div>
+                    <div id="three_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\exercise.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For moderately active people: physical work of moderate gravity or regular training 3-5 days a week</p>
+                        </button>
+                    </div>
+                    <div id="fourth_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\girya.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For very active people: physical work is full day or intensive training 6-7 times a week</p>
+                        </button>
+                    </div>
+                    <div id="fifth_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\fire.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For extremely active people: hard physical work and intensive training/playing sports</p>
                         </button>
                     </div>
                 </div>
+                <input id="activities-value_input" value="none" type="text" class="hidden">
+                <button type="button" class="log_wrapper submit_wrapper">
+                    <p class="bold_text submit_text">CONTINUE</p>
+                </button>
             </div>
-            <div class="container hidden">
-                <h1 class="very_big_text calories">Calories</h1>
-                <div class="form_container">
-                    <h2 class="big_text form__text">SIGN UP</h2>
-                    <div class="form" action="#">
-                        <div class="log_wrapper">
-                            <input type="text" name="name" class="bold_text login log__input" placeholder="Name">
-                        </div>
-                        <div class="log_wrapper">
-                            <input type="email" name="email" class="bold_text login log__input" placeholder="Email">
-                        </div>
-                        <div div class="log_wrapper">
-                            <input type="password" name="password" class="bold_text log__input" placeholder="Password">
-                        </div>
-                        <div class="log_wrapper submit_wrapper">
-                            <input class="bold_text submit_text" type="submit" value="REGISTER"></p>
-                        </div>
-                    </div>
-                    <p class="normal_text forgot_text">Or <a style="color:#62E48B;" href="#" class="link_text">login</a> to your account</p>
+        </div>
+    </div>
+    <div class="container hidden">
+        <h1 class="very_big_text calories">Calories</h1>
+        <div class="form_container">
+            <h2 class="big_text form__text">SIGN UP</h2>
+            <div class="form" action="#">
+                <div class="log_wrapper">
+                    <input type="text" name="name" class="bold_text login log__input" placeholder="Name">
+                </div>
+                <div class="log_wrapper">
+                    <input type="email" name="email" class="bold_text login log__input" placeholder="Email">
+                </div>
+                <div div class="log_wrapper">
+                    <input type="password" name="password" class="bold_text log__input" placeholder="Password">
+                </div>
+                <div class="log_wrapper submit_wrapper">
+                    <input class="bold_text submit_text" type="submit" value="REGISTER"></p>
                 </div>
             </div>
-        </form>
-@endsection
+            <p class="normal_text forgot_text">Or <a style="color:#62E48B;" href="#" class="link_text">login</a> to your account</p>
+        </div>
+    </div>
+</form>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous">
+</script>
+<script src="{{ asset('\resources\js\script.js') }}">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous">
+</script>
