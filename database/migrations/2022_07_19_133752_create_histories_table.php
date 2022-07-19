@@ -15,12 +15,13 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('user_id')->unsigned();
             $table->smallInteger('calories_remained');
             $table->smallInteger('carbohydrates');
             $table->smallInteger('protein');
             $table->smallInteger('fats');
-            $table->smallInteger('workout_calories');
-            $table->timestamps();
+            $table->smallInteger('workout_calories')->nullable(true);
+            $table->date('current_date');
         });
     }
 

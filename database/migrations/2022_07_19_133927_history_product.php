@@ -27,6 +27,6 @@ class HistoryProduct extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('history_product');
     }
 }

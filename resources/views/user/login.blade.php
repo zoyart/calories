@@ -36,7 +36,7 @@
         </form>
         <p class="normal_text forgot_text">Forgot <a href="#" class="link_text">Username / Password?</a></p>
         <p class="normal_text between_text">or</p>
-        <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
+        <p class="normal_text"><a href="{{ route('register.form') }}" class="link_text">Create your Account</a></p>
     </div>
 </div>
 </form>

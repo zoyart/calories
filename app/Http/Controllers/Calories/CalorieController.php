@@ -16,7 +16,13 @@ class CalorieController extends Controller
      */
     public function index()
     {
-        return view('calories.calories');
+        $userId = Auth::user()->id;
+        $history = User::find($userId)->histories()->orderBy('current_date','asc')->get();
+//dd($history);
+//        $products = $history[0]->products[0];
+//        {{ $day->products[0]['name']}}
+
+        return view('calories.calories', compact('history'));
     }
 
     /**
