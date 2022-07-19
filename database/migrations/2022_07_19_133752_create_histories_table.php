@@ -15,6 +15,11 @@ class CreateHistoriesTable extends Migration
     {
         Schema::create('histories', function (Blueprint $table) {
             $table->id();
+            $table->smallInteger('calories_remained');
+            $table->smallInteger('carbohydrates');
+            $table->smallInteger('protein');
+            $table->smallInteger('fats');
+            $table->smallInteger('workout_calories');
             $table->timestamps();
         });
     }
