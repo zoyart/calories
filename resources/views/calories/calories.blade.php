@@ -27,8 +27,8 @@
         </div>
         <div class="calories__calories_left">
             <div class="calorius_wrapper">
-                <p class="big_text">2000</p>
-                <p class="normal_text">CALLORY REMAINED</p>
+                <p class="big_text">2001</p>
+                <p class="normal_text">CALORIES REMAINED</p>
             </div>
         </div>
         <div class="calories__consumption">
@@ -41,7 +41,7 @@
     </div>
     <div class="calories__protein_block">
         <div id="carbohydrates" class="calories__protein">
-            <p class="normal_text">CARBOHYDRATER</p>
+            <p class="normal_text">CARBOHYDRATES</p>
             <div class="strip protein__srtip"></div>
             <p class="normal_text">0 / 250</p>
         </div>
@@ -160,7 +160,7 @@
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="bucket_image">
                     <img src="{{ asset('\resources\img\bucket.svg') }}" alt="" class="bucket_image">
                 </div>
-                
+
             </div>
             <a href="" class="plus_button calories__button">
                 <img src="{{ asset('\resources\img\plus_button.svg') }}" alt="" class="plus_image button_image">

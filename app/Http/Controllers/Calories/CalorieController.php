@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Calories;
 
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CalorieController extends Controller
 {

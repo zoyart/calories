@@ -94,11 +94,11 @@
                 {{--                    </div>--}}
                 {{--                </div>--}}
                 <select name="workout" id="workout" required>
-                    <option value="no">No</option>
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="high">High</option>
-                    <option value="athlete">Athlete</option>
+                    <option value="1.2">No</option>
+                    <option value="1.375">Easy</option>
+                    <option value="1.55">Medium</option>
+                    <option value="1.725">High</option>
+                    <option value="1.9">Athlete</option>
                 </select>
                 <input id="activities-value_input" value="none" type="text" class="hidden">
                 <button type="button" class="log_wrapper submit_wrapper">
