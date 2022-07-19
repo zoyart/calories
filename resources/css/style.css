@@ -322,7 +322,7 @@ input:focus:-ms-input-placeholder {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  padding: 32px 50px 10px 29px;
+  padding: 32px 160px 10px 29px;
 }
 
 .image_wrapper {
@@ -345,6 +345,8 @@ input:focus:-ms-input-placeholder {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 10px;
 }
 .eating_buckets_wrapper .bucket_image {
@@ -389,13 +391,29 @@ input:focus:-ms-input-placeholder {
     width: 40px;
     height: 42px;
   }
+
+  .eating_time_text__wrapper {
+    padding-right: 600px;
+  }
+}
+@media (max-width: 1200px) {
+  .eating_time_text__wrapper {
+    padding-right: 400px;
+  }
 }
 @media (max-width: 835px) {
   .calories__menu_block .calories__calories_left {
     margin: -70px 30px 0 30px;
   }
+
+  .eating_time_text__wrapper {
+    padding-right: 130px;
+  }
 }
 @media (max-width: 630px) {
+  .eating_time_text__wrapper {
+    padding: 32px 160px 10px 29px;
+  }
   .eating_time_text__wrapper .image_wrapper {
     display: none;
   }
@@ -442,16 +460,16 @@ input:focus:-ms-input-placeholder {
     width: 30px;
     height: 28px;
   }
-
-  .calories__eating_time {
-    position: relative;
-  }
-  .calories__eating_time .plus_button {
-    position: absolute;
-    right: 50px;
-    top: 52px;
-  }
 }
+.calories__eating_time {
+  position: relative;
+}
+.calories__eating_time .plus_button {
+  position: absolute;
+  right: 50px;
+  top: 52px;
+}
+
 input:focus::-webkit-input-placeholder {
   color: transparent;
 }
@@ -1530,6 +1548,12 @@ hr {
   background-color: #FFFFFF;
 }
 
+.container_form {
+  min-height: 100%;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#A8F3A4), to(#62E48B));
+  background-image: linear-gradient(#A8F3A4, #62E48B);
+}
+
 .header {
   max-width: 95%;
   display: -webkit-box;
@@ -1877,6 +1901,22 @@ footer .footer__image_container .footer__image {
   .social_container {
     max-width: 130px;
   }
+
+  .footer__image_container {
+    position: absolute;
+    display: none;
+    max-width: 0px;
+  }
+  .footer__image_container img {
+    display: none;
+    max-width: 0px;
+  }
+
+  .footer__container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
 }
 @media (max-width: 575.98px) {
   .__container {
@@ -1905,6 +1945,14 @@ footer .footer__image_container .footer__image {
   border: 1px solid #F4F3F0;
 }
 
+form .center_log {
+  margin: 0 auto;
+}
+
+.form {
+  margin: 0 auto;
+}
+
 .container {
   width: 75%;
   height: 95%;
@@ -1931,12 +1979,6 @@ footer .footer__image_container .footer__image {
           flex-direction: column;
   margin: 75px auto 0 auto;
   min-width: 290px;
-}
-.container .form_container .form {
-  margin: 0 auto;
-}
-.container .form_container form {
-  margin: 0 auto;
 }
 .container .form_container .forgot_text {
   margin-top: 17px;

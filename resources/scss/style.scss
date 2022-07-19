@@ -41,7 +41,10 @@ hr {
 .header__container {
     background-color: $white;
 }
-
+.container_form {
+    min-height: 100%;
+    background-image: linear-gradient(#A8F3A4, #62E48B);
+}
 .header {
     max-width: 95%;
     display: flex;
@@ -393,6 +396,19 @@ footer {
 
     }
 
+    .footer__image_container {
+        position: absolute;
+        display: none;
+        max-width: 0px;
+        img {
+            display: none;
+            max-width: 0px;
+        }
+
+    }
+    .footer__container {
+        justify-content: space-between;
+    }
 }
 
 @media (max-width: 575.98px) {
@@ -429,8 +445,18 @@ footer {
     height: 1px;
     border: 1px solid $grey
 }
+form {
+    .center_log {
+       margin: 0 auto; 
+    }
+    
+}
+.form {
+    margin: 0 auto;   
+}
 
 .container {
+
     width: 75%;
     height: 95%;
     background-color: white;
@@ -443,19 +469,13 @@ footer {
     .calories {
         padding-top: 40px;
     }
-
+    
     .form_container {
         display: flex;
         flex-direction: column;
         margin: 75px auto 0 auto;
         min-width: 290px;
-
-        .form {
-            margin: 0 auto;
-        }
-        form {
-            margin: 0 auto;
-        }
+        
         .forgot_text {
             margin-top: 17px;
         }

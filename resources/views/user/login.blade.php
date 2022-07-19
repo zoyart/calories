@@ -18,12 +18,12 @@
         <h1 class="very_big_text calories">Calories</h1>
         <div class="form_container">
             <h2 class="big_text form__text">SIGN IN</h2>
-            <form method="post" action="{{ route('auth') }}">
+            <form method="post" action="{{ route('auth') }}" class="form">
                 @csrf
-                <div class="log_wrapper">
+                <div class="log_wrapper center_log">
                     <input type="email" class="bold_text login log__input" id="email" aria-describedby="emailHelp" name="email" placeholder="Email">
                 </div>
-                <div class="log_wrapper">
+                <div class="log_wrapper center_log">
                     <input type="password" class="bold_text log__input" id="password" name="password" placeholder="Password">
                 </div>
                 <button type="submit" class="log_wrapper submit_wrapper">
@@ -35,6 +35,10 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div>
+<<<<<<< HEAD
+</form>
+    
+=======
     <!-- JavaScript Bundle with Popper -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
             crossorigin="anonymous">
@@ -46,6 +50,7 @@
             crossorigin="anonymous">
     </script>
 </body>
+>>>>>>> fbaa1c26aa0d216b5340a21c24b75d6595b0f41c
 
 
 {{-- <div class="container">
@@ -91,3 +96,11 @@
             <p class="normal_text"><a href="#" class="link_text">Create your Account</a></p>
         </div>
     </div> --}}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous">
+</script>
+<script src="{{ asset('\resources\js\script.js') }}">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous">
+</script>
