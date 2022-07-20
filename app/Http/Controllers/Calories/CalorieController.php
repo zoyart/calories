@@ -16,23 +16,13 @@ class CalorieController extends Controller
      */
     public function index()
     {
-        $userId = Auth::user()->id;
-        $history = User::find($userId)->histories()->orderBy('current_date','asc')->get();
+//        $userId = Auth::user()->id;
+//        $history = User::find($userId)->histories()->orderBy('current_date','asc')->get();
 //dd($history);
 //        $products = $history[0]->products[0];
 //        {{ $day->products[0]['name']}}
 
-        return view('calories.calories', compact('history'));
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+        return view('calories.calories');
     }
 
     /**
@@ -42,17 +32,6 @@ class CalorieController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
     {
         //
     }
