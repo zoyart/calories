@@ -8,21 +8,18 @@
             <h2 class="big_text form__text">Choose your gender:</h2>
             <div class="form">
                 <div class="genders">
+                    <div class="man gender_wrapper">
+                        <button id="male" type="button" class="gender_button">
+                            <img src="{{ asset('\resources\img\bussiness-man.png') }}" class="gender_img" alt="Man">
+                        </button>
+                    </div>
+                    <div class="woman gender_wrapper">
+                        <button id="female" type="button" class="gender_button">
+                            <img src="{{ asset('\resources\img\businesswoman.png') }}" class="gender_img" alt="Woman">
+                        </button>
+                    </div>
 
-                    {{--                    <div class="man gender_wrapper">--}}
-                    {{--                        <button type="button" class="gender_button">--}}
-                    {{--                            <img src="{{ asset('\resources\img\bussiness-man.png') }}" class="gender_img" alt="Man">--}}
-                    {{--                        </button>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="woman gender_wrapper">--}}
-                    {{--                        <button type="button" class="gender_button">--}}
-                    {{--                            <img src="{{ asset('\resources\img\businesswoman.png') }}" class="gender_img" alt="Woman">--}}
-                    {{--                        </button>--}}
-                    {{--                    </div>--}}
-                    <select name="gender" id="gender" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                    </select>
+                    <input style="display: none" type="text" value="" name="gender" id="gender" required>
                 </div>
                 <button type="button" class="log_wrapper submit_wrapper">
                     <p class="bold_text submit_text">CONTINUE</p>
@@ -146,6 +143,7 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 </script>
 <script src="{{ asset('\resources\js\script.js') }}">
+    <script src="{{ asset('\resources\js\register.js') }}">
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
@@ -155,99 +153,4 @@
 
 {{-- Подключение библиотеки для отображения графиков (Подключать перед использованием!) --}}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js">
-</script>
-<script>
-
-    // Запрос на сервер, после получения целевого и текущего веса
-    var button = document.querySelector('#btn_section_two');
-    button.addEventListener('click', function () {
-        let weight = document.querySelector('#weight').value;
-        let purpose_weight = document.querySelector('#purpose_weight').value;
-
-        const sendData = async (url) => {
-            // Обязательный токен для запроса
-            const token = $('meta[name=_token]').attr('content');
-            // Запрос
-            const response = await fetch(url, {
-                method: 'GET',
-                headers: {
-                    "Content-Type": "application/json",
-                    "Accept": "application/json",
-                    "X-Requested-With": "XMLHttpRequest",
-                    "X-CSRF-Token": token,
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error('Ошибка запроса или сервера');
-            }
-
-            return await response.json();
-        }
-
-        sendData(`http://calories/api/target-date?weight=${weight}&purpose_weight=${purpose_weight}`).then((data) => {
-            window.targetDates = { dates: data };
-
-            // Переменные для графика
-            let weight = document.querySelector('#weight').value;
-            let purpose_weight = document.querySelector('#purpose_weight').value;
-            // Отображение графика при переходе
-            let canvas = document.querySelector('#target_date').getContext('2d');
-            let pace_value = pace.value;
-            let date = window.targetDates.dates;
-
-            window.canvasObj = new Chart(canvas, {
-                type: 'line',
-                data: {
-                    labels: ['Today', date[`${pace_value}`]],
-                    datasets: [{
-                        label: 'Tempo',
-                        data: [weight, purpose_weight],
-                        backgroundColor: [
-                            'white'
-                        ],
-                        borderColor: [
-                            '#41CD8C'
-                        ],
-                        borderWidth: 2
-                    }]
-                },
-                options: {},
-            })
-
-            console.log(window.canvasObj);
-        });
-    });
-
-    // Работает при изменении range
-    function fun1() {
-        // Отображение текущего числа в range
-        var pace = document.getElementById('pace');
-        var pace_range = document.getElementById('pace_range');
-        pace_range.value = pace.value;
-
-
-        // Обновление графика
-        let weight = document.querySelector('#weight').value;
-        let purpose_weight = document.querySelector('#purpose_weight').value;
-        let pace_value = pace.value;
-        let date = window.targetDates.dates;
-
-        window.canvasObj.data = {
-            labels: ['Today', date[`${pace_value}`]],
-            datasets: [{
-                label: 'Tempo',
-                data: [weight, purpose_weight],
-                backgroundColor: [
-                    'white'
-                ],
-                borderColor: [
-                    '#41CD8C'
-                ],
-                borderWidth: 2
-            }]
-        }
-
-        canvasObj.update();
-    }
 </script>
