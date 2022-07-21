@@ -58,46 +58,40 @@
         <div class="form_container">
             <h2 class="big_text form__text">Select the level of daily activity</h2>
             <div class="form" name="activity">
-                {{--                <div class="activities">--}}
-                {{--                    <div id="first_active-level" class="activities__div">--}}
-                {{--                        <button type="button" class="activities__btn">--}}
-                {{--                            <img src="{{ asset('\resources\img\sleep.png') }}" class="activities__img" alt="sleep">--}}
-                {{--                            <p class="normal_text activities__text">For sedentary people, there are few training or they are absent</p>--}}
-                {{--                        </button>--}}
-                {{--                    </div>--}}
-                {{--                    <div id="second_active-level" class="activities__div">--}}
-                {{--                        <button type="button" class="activities__btn">--}}
-                {{--                            <img src="{{ asset('\resources\img\sports.png') }}" class="activities__img" alt="sleep">--}}
-                {{--                            <p class="normal_text activities__text">For people with low activity, easy training 1-3 times a week or in the form of a different activity equivalent</p>--}}
-                {{--                        </button>--}}
-                {{--                    </div>--}}
-                {{--                    <div id="three_active-level" class="activities__div">--}}
-                {{--                        <button type="button" class="activities__btn">--}}
-                {{--                            <img src="{{ asset('\resources\img\exercise.png') }}" class="activities__img" alt="sleep">--}}
-                {{--                            <p class="normal_text activities__text">For moderately active people: physical work of moderate gravity or regular training 3-5 days a week</p>--}}
-                {{--                        </button>--}}
-                {{--                    </div>--}}
-                {{--                    <div id="fourth_active-level" class="activities__div">--}}
-                {{--                        <button type="button" class="activities__btn">--}}
-                {{--                            <img src="{{ asset('\resources\img\girya.png') }}" class="activities__img" alt="sleep">--}}
-                {{--                            <p class="normal_text activities__text">For very active people: physical work is full day or intensive training 6-7 times a week</p>--}}
-                {{--                        </button>--}}
-                {{--                    </div>--}}
-                {{--                    <div id="fifth_active-level" class="activities__div">--}}
-                {{--                        <button type="button" class="activities__btn">--}}
-                {{--                            <img src="{{ asset('\resources\img\fire.png') }}" class="activities__img" alt="sleep">--}}
-                {{--                            <p class="normal_text activities__text">For extremely active people: hard physical work and intensive training/playing sports</p>--}}
-                {{--                        </button>--}}
-                {{--                    </div>--}}
-                {{--                </div>--}}
-                <select name="workout" id="workout" required>
-                    <option value="1.2">No</option>
-                    <option value="1.375">Easy</option>
-                    <option value="1.55">Medium</option>
-                    <option value="1.725">High</option>
-                    <option value="1.9">Athlete</option>
-                </select>
-                <input id="activities-value_input" value="none" type="text" class="hidden">
+                <div class="activities">
+                    <div id="first_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\sleep.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For sedentary people, there are few training or they are absent</p>
+                        </button>
+                    </div>
+                    <div id="second_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\sports.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For people with low activity, easy training 1-3 times a week or in the form of a different activity equivalent</p>
+                        </button>
+                    </div>
+                    <div id="three_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\exercise.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For moderately active people: physical work of moderate gravity or regular training 3-5 days a week</p>
+                        </button>
+                    </div>
+                    <div id="fourth_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\girya.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For very active people: physical work is full day or intensive training 6-7 times a week</p>
+                        </button>
+                    </div>
+                    <div id="fifth_active-level" class="activities__div">
+                        <button type="button" class="activities__btn">
+                            <img src="{{ asset('\resources\img\fire.png') }}" class="activities__img" alt="sleep">
+                            <p class="normal_text activities__text">For extremely active people: hard physical work and intensive training/playing sports</p>
+                        </button>
+                    </div>
+                </div>
+                <input style="display: none" type="text" value="" name="workout" id="workout" required>
+                {{-- <input id="activities-value_input" value="none" type="text" class="hidden" id="activities"> --}}
                 <button type="button" class="log_wrapper submit_wrapper">
                     <p class="bold_text submit_text">CONTINUE</p>
                 </button>
