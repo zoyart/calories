@@ -1,9 +1,11 @@
 
 // Запрос на сервер, после получения целевого и текущего веса
-var button = document.querySelector('#btn_section_two');
-button.addEventListener('click', function () {
-    let weight = document.querySelector('#weight').value;
-    let purpose_weight = document.querySelector('#purpose_weight').value;
+
+const button = document.querySelector('#btn_section_two');
+
+button.addEventListener('click', () => {
+    const weight = document.getElementById('weight').value;
+    const purpose_weight = document.getElementsByClassName('purpose_weight').value;
 
     const sendData = async (url) => {
         // Обязательный токен для запроса
@@ -62,9 +64,10 @@ button.addEventListener('click', function () {
 
 // Работает при изменении range
 function fun1() {
+    window.targetDates = { dates: data };
     // Отображение текущего числа в range
-    var pace = document.getElementById('pace');
-    var pace_range = document.getElementById('pace_range');
+    const pace = document.getElementById('pace');
+    const pace_range = document.getElementById('pace_range');
     pace_range.value = pace.value;
 
 
@@ -91,4 +94,10 @@ function fun1() {
 
     canvasObj.update();
 }
+// Запуск функции 
+const form_range = document.querySelector('.form-range');
+form_range.addEventListener('input', ()=> {
+    console.log("Fun");
+    fun1();
+});
 
