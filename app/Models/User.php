@@ -31,6 +31,7 @@ class User extends Authenticatable
         'calories_per_day',
         'workout',
         'purpose',
+        'api_token'
     ];
 
     /**

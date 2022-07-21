@@ -8,6 +8,7 @@ use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class UserController extends Controller
 {
@@ -20,7 +21,6 @@ class UserController extends Controller
     }
 
     public function store(Request $request) {
-        dd($request);
         $weight = (int) $request->input('weight');
         $growth = (int) $request->input('growth');
         $age = (int) $request->input('age');
@@ -46,7 +46,7 @@ class UserController extends Controller
             'weight' => $weight,
             'growth' => $growth,
             'age' => $age,
-
+            'api_token' => Str::random(80),
             'purpose' => $request->input('purpose'),
             'pace' => $paceInKilograms,
             'purpose_weight' => $request->input('purpose_weight'),
