@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email', 255)->unique();
             $table->string('password', 255);
-            $table->string('api_token', 80)->unique()->nullable();
             $table->char('gender')->nullable();
             $table->char('purpose')->nullable();
             $table->char('workout')->nullable();

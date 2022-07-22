@@ -15,5 +15,8 @@ Route::get('/recipes', [RecipeController::class, 'findRecipes']);
 // Получение рецепта по названию из категории male
 
 
-// Получение истории пользователя
-Route::get('/user-history', [CalorieController::class, 'userHistory']);
+
+//Route::middleware(['auth:api'])->group(function () {
+    // Получение истории пользователя
+    Route::get('/user-history', [CalorieController::class, 'userHistory']);
+//});

@@ -46,7 +46,6 @@ class UserController extends Controller
             'weight' => $weight,
             'growth' => $growth,
             'age' => $age,
-            'api_token' => Str::random(80),
             'purpose' => $request->input('purpose'),
             'pace' => $paceInKilograms,
             'purpose_weight' => $request->input('purpose_weight'),

@@ -5,9 +5,9 @@ use App\Http\Controllers\Recipes\RecipeController;
 use App\Http\Controllers\User\ProfileController;
 use App\Http\Controllers\User\UserController;
 use Illuminate\Support\Facades\Route;
-use \App\Http\Controllers\Admin\AdminController;
-use \App\Http\Controllers\Recipes\RecipeCategoryController;
-use \App\Http\Controllers\Admin\EmployeeController;
+use App\Http\Controllers\Admin\AdminController;
+use App\Http\Controllers\Recipes\RecipeCategoryController;
+use App\Http\Controllers\Admin\EmployeeController;
 use App\Http\Controllers\Progress\ProgressController;
 
 // General page

@@ -30,7 +30,7 @@ class CalorieController extends Controller
         $count = (is_null($request->count)) ? 1 : $request->count;
 
         // Получение данных
-        $userId = Auth::check();
+        $userId = \auth()->user();
 //        $history = User::find($userId)->histories()->orderBy('current_date',$sortType)->get();
 
         return response()->json($userId, 200);
