@@ -23,8 +23,8 @@
         <form method="post" action="{{ route('auth') }}" class="form">
             @csrf
             <div class="log_wrapper center_log">
-                <input type="text" class="bold_text login log__input" id="email" aria-describedby="emailHelp"
-                       name="name" placeholder="Email">
+                <input type="email" class="bold_text login log__input" id="email" aria-describedby="emailHelp"
+                       name="email" placeholder="Email">
             </div>
             <div class="log_wrapper center_log">
                 <input type="password" class="bold_text log__input" id="password" name="password"
