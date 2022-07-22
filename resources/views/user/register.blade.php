@@ -98,22 +98,24 @@
             </div>
         </div>
     </div>
-    <div class="container hidden">
+    <div class="register_page container hidden">
         <h1 class="very_big_text calories">Calories</h1>
-        <div class="form_container">
-            <h2 class="big_text form__text">SIGN UP</h2>
-            <div class="form" action="#">
-                <div>
-                    <label for="pace" class="form-label">Pace</label>
+        <div class="form form_container_pace" action="#">
+            <div class="form-label__container">
+                <div class="pace_label">
+                    <label for="pace" class="form-label"><p class="normal_text">Pace</p></label>
                     <input type="range" class="form-range" min="0.1" max="0.7" step="0.1" id="pace" name="pace"
-                    oninput="fun1">
-                    <input type="text" id="pace_range" value="0.4">
-                    <label for="pace" class="form-label">kg/week</label>
+                    oninput="fun1()">
+                    <input type="text" id="pace_range" value="0.4" class="normal_text pace_range_text">
+                    <label for="pace" class="form-label"><p class="normal_text">kg/week</p></label>
 
                 </div>
-                <div>
+                <div class="form-range__container">
                     <canvas id="target_date" height="300px" width="300px"></canvas>
                 </div>
+            </div>
+            <div class="registration_container">
+                <h2 class="big_text form__text">SIGN UP</h2>
                 <div class="log_wrapper">
                     <input type="text" name="name" class="bold_text login log__input" placeholder="Name">
                 </div>
@@ -126,9 +128,10 @@
                 <div class="log_wrapper submit_wrapper">
                     <input class="bold_text submit_text" type="submit" value="REGISTER"></p>
                 </div>
+                <p class="normal_text forgot_text">Or <a style="color:#62E48B;" href="#" class="link_text">login</a> to your
+                    account
+                </p> 
             </div>
-            <p class="normal_text forgot_text">Or <a style="color:#62E48B;" href="#" class="link_text">login</a> to your
-                account</p>
         </div>
     </div>
 </form>
@@ -137,8 +140,8 @@
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous">
 </script>
 <script>
-        var button = document.querySelector('#btn_section_two');
-    button.addEventListener('click', function () {
+    const button = document.querySelector('#btn_section_two');
+    button.addEventListener('click',  () => {
         let weight = document.querySelector('#weight').value;
         let purpose_weight = document.querySelector('#purpose_weight').value;
         const sendData = async (url) => {
@@ -181,6 +184,9 @@
                         borderColor: [
                             '#41CD8C'
                         ],
+                        color: [
+                            '#0E0E11'
+                        ],
                         borderWidth: 2
                     }]
                 },
@@ -193,8 +199,8 @@
     // Работает при изменении range
     function fun1() {
         // Отображение текущего числа в range
-        var pace = document.getElementById('pace');
-        var pace_range = document.getElementById('pace_range');
+        const pace = document.getElementById('pace');
+        const pace_range = document.getElementById('pace_range');
         pace_range.value = pace.value;
         // Обновление графика
         let weight = document.querySelector('#weight').value;
