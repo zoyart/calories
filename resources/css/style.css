@@ -2212,8 +2212,8 @@ form .center_log {
     padding-left: 35px;
   }
 }
-.form-range__container {
-  min-width: 100%;
+.form-label__container div {
+  margin: 0 auto;
 }
 
 input[type=range] {
